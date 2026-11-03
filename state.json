@@ -20,14 +20,14 @@
     "publishedDurationHuman": "1h 5m 29s"
   },
   "tokens": {
-    "input": 795219,
-    "output": 239137,
-    "reasoning": 229271,
-    "cacheRead": 153624832,
+    "input": 812232,
+    "output": 248385,
+    "reasoning": 234520,
+    "cacheRead": 162082048,
     "cacheWrite": 1230,
-    "total": 1263627,
-    "totalWithCache": 154889689,
-    "note": "Snapshot from the OpenCode session record at 2026-11-03T05:30:09Z, after the 1.2.0 low-poly traffic release and local verification. total = input + output + reasoning. Cache reads/writes are context-usage figures and are reported separately; the final commit, Pages rebuild and closing response add a small amount more.",
+    "total": 1295137,
+    "totalWithCache": 163378415,
+    "note": "Snapshot from the OpenCode session record at 2026-11-03T05:37:00Z, after adding the release documentation set (privacy, browser support, design, gallery, glossary, citation). total = input + output + reasoning. Cache reads/writes are context-usage figures and are reported separately; the final commit, Pages rebuild and closing response add a small amount more.",
     "cost": 0.0
   },
   "cost": {
@@ -111,8 +111,8 @@
     "script.js": 4346,
     "screenshots": 10,
     "totalRepositoryBytesApprox": 3200000,
-    "docs": 11,
-    "rootPolicies": 9
+    "docs": 15,
+    "rootPolicies": 11
   },
   "credits": {
     "builtWith": "OpenCode",
@@ -152,6 +152,10 @@
     {
       "at": "2026-11-03T05:30:09Z",
       "summary": "Feature: replaced box traffic with layered low-poly cars (tapered body, glass cabin, roof, four wheels, head/tail lights) using six instanced meshes. Version 1.2.0."
+    },
+    {
+      "at": "2026-11-03T05:37:00Z",
+      "summary": "Documentation: added privacy policy, browser-support matrix, design language, screenshot gallery, Thai glossary and CITATION.cff; linked them from README, docs index, AGENTS and deployment records. No runtime change; version remains 1.2.0."
     }
   ],
   "projectVersion": "1.2.0",

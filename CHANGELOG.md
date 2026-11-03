@@ -4,6 +4,14 @@ All notable changes to **Bangkok 3D — Interactive Urban Tourist Guide & Explor
 documented here. The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and the
 project uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased]
+
+### Documentation
+
+- Added a privacy policy, browser-support matrix, design-language guide, screenshot gallery, Thai
+  glossary and CITATION.cff metadata. These document the shipped 1.2.0 build without changing runtime
+  behaviour.
+
 ## [1.2.0] — 2026-11-03
 
 ### Added

@@ -36,7 +36,8 @@ bundler, test runner or environment variable.
 
 - [README](README.md) — quick tour and links.
 - [docs/README.md](docs/README.md) — controls, architecture, data format, testing, deployment, release
-  checklist, accessibility, performance, FAQ and roadmap.
+  checklist, accessibility, performance, browser support, design, gallery, glossary, FAQ and roadmap.
+- [PRIVACY.md](PRIVACY.md), [CITATION.cff](CITATION.cff), [AUTHORS.md](AUTHORS.md).
 - Root policies: [CONTRIBUTING](CONTRIBUTING.md), [CODE_OF_CONDUCT](CODE_OF_CONDUCT.md),
   [SECURITY](SECURITY.md), [SUPPORT](SUPPORT.md), [CHANGELOG](CHANGELOG.md), [AUTHORS](AUTHORS.md).
 

@@ -124,7 +124,8 @@ Do not commit a `CNAME` for a domain you do not control.
 | Changelog | `CHANGELOG.md` |
 | Licence | `LICENSE` |
 | Third-party notices | `THIRD_PARTY_NOTICES.md` |
-| Policies | `CONTRIBUTING.md`, `CODE_OF_CONDUCT.md`, `SECURITY.md`, `SUPPORT.md` |
+| Policies | `CONTRIBUTING.md`, `CODE_OF_CONDUCT.md`, `SECURITY.md`, `SUPPORT.md`, `PRIVACY.md` |
+| Citation | `CITATION.cff` |
 | Templates | `.github/ISSUE_TEMPLATE/`, `.github/PULL_REQUEST_TEMPLATE.md` |
 | CI | `.github/workflows/static-check.yml` |
 

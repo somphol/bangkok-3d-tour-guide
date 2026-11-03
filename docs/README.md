@@ -5,7 +5,7 @@ reviewers, maintainers and anyone adapting the project.
 
 | Document | Read it for |
 | --- | --- |
-| [Controls](CONTROLS.md) | Every mouse, keyboard, wheel and touch interaction |
+| [Controls](CONTROLS.md) | Every mouse, keyboard, wheel, touch and walk-pad interaction |
 | [Architecture](ARCHITECTURE.md) | How the single static app is assembled and why |
 | [Data format](DATA_FORMAT.md) | `localStorage`, exported `bangkok_3d_tour.json`, import rules |
 | [Testing](TESTING.md) | Self-test, static checks, manual and headless verification |
@@ -15,6 +15,10 @@ reviewers, maintainers and anyone adapting the project.
 | [Performance](PERFORMANCE.md) | Scene budget, instancing, shadows, mobile choices |
 | [FAQ](FAQ.md) | Common questions about the map, prices, audio and data |
 | [Roadmap](ROADMAP.md) | Now, next and later — and explicit non-goals |
+| [Browser support](BROWSER_SUPPORT.md) | Supported browsers, WebGL/audio/input requirements |
+| [Design language](DESIGN.md) | Palette, typography, layout, 3D language and motion |
+| [Gallery](GALLERY.md) | Release screenshots with captions |
+| [Glossary](GLOSSARY.md) | Thai temple and Bangkok terms used in the guide |
 
 Project-level policies live at the repository root:
 
@@ -24,5 +28,7 @@ Project-level policies live at the repository root:
 - [Support](../SUPPORT.md)
 - [Authors and credits](../AUTHORS.md)
 - [Changelog](../CHANGELOG.md)
+- [Privacy](../PRIVACY.md)
 - [Third-party notices](../THIRD_PARTY_NOTICES.md)
+- [Citation metadata](../CITATION.cff)
 - [Build state](../STATE.md)

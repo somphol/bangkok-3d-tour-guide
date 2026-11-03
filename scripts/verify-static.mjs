@@ -48,7 +48,9 @@ const required = [
   'CODE_OF_CONDUCT.md',
   'SECURITY.md',
   'SUPPORT.md',
+  'PRIVACY.md',
   'AUTHORS.md',
+  'CITATION.cff',
   'LICENSE',
   'THIRD_PARTY_NOTICES.md',
   'state.json',
@@ -76,7 +78,11 @@ const required = [
   'docs/ACCESSIBILITY.md',
   'docs/PERFORMANCE.md',
   'docs/FAQ.md',
-  'docs/ROADMAP.md'
+  'docs/ROADMAP.md',
+  'docs/BROWSER_SUPPORT.md',
+  'docs/DESIGN.md',
+  'docs/GALLERY.md',
+  'docs/GLOSSARY.md'
 ];
 
 check('required release files exist', () => {

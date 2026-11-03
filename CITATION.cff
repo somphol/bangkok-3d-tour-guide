@@ -1,0 +1,37 @@
+cff-version: 1.2.0
+message: "If you use or adapt this project, please cite it as below."
+title: "Bangkok 3D — Interactive Urban Tourist Guide & Explorer Studio"
+abstract: >-
+  A static, bilingual Three.js miniature of Bangkok with five procedural landmarks,
+  drone, drag-to-look walking and automated river-tour camera modes, three lighting
+  presets, spatial Web Audio synthesis, localStorage progress and portable JSON
+  itinerary export/import.
+type: software
+authors:
+  - name: "Somphol Boonjing"
+    alias: "somphol"
+    website: "https://github.com/somphol"
+repository-code: "https://github.com/somphol/bangkok-3d-tour-guide"
+url: "https://somphol.github.io/bangkok-3d-tour-guide/"
+license: MIT
+version: "1.2.0"
+date-released: "2026-11-03"
+keywords:
+  - threejs
+  - webgl
+  - bangkok
+  - thailand
+  - tourism
+  - 3d
+  - bilingual
+  - interactive
+  - procedural
+references:
+  - type: software
+    title: "Three.js r128"
+    url: "https://threejs.org/"
+    notes: "WebGL renderer, MIT licence"
+  - type: software
+    title: "OpenCode"
+    url: "https://opencode.ai"
+    notes: "Agentic development harness used during the build"

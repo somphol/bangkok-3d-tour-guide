@@ -23,18 +23,18 @@
 
 | Metric | Tokens |
 | --- | ---: |
-| Input | 795,219 |
-| Output | 239,137 |
-| Reasoning | 229,271 |
-| **Total (input + output + reasoning)** | **1,263,627** |
-| Cache read | 153,624,832 |
+| Input | 812,232 |
+| Output | 248,385 |
+| Reasoning | 234,520 |
+| **Total (input + output + reasoning)** | **1,295,137** |
+| Cache read | 162,082,048 |
 | Cache write | 1,230 |
-| Total including cache | 154,889,689 |
+| Total including cache | 163,378,415 |
 
-> Snapshot from the OpenCode session record at 2026-11-03T05:30:09Z, after the 1.2.0 low-poly traffic release and
-> local verification. Total cost reported by the session: **$0.00**. The final commit, Pages rebuild
-> and closing response add a small amount more. Cache reads/writes are context-usage figures and are
-> reported separately from the input/output/reasoning total.
+> Snapshot from the OpenCode session record at 2026-11-03T05:37:00Z, after adding the release documentation set
+> (privacy, browser support, design, gallery, glossary, citation). Total cost reported by the session:
+> **$0.00**. The final commit, Pages rebuild and closing response add a small amount more. Cache
+> reads/writes are context-usage figures and are reported separately from the input/output/reasoning total.
 
 ## What was built
 
@@ -120,8 +120,8 @@ package manager, API key or tracking.
 | `style.css` | 1,377 | design system, glass UI, responsive/Thai typography |
 | `script.js` | 4,168 | world, landmarks, cameras, UI, audio, state, self-test |
 | `screenshots/` | 10 | intro, day, golden, night, walk, river tour, tour stop, guide, Thai guide, mobile |
-| `docs/` | 11 | controls, architecture, data, testing, deployment, release, accessibility, performance, FAQ, roadmap, index |
-| Root policies | 9 | changelog, contributing, conduct, security, support, authors, licence, notices, state |
+| `docs/` | 15 | controls, architecture, data, testing, deployment, release, accessibility, performance, browser support, design, gallery, glossary, FAQ, roadmap, index |
+| Root policies | 11 | changelog, contributing, conduct, security, support, privacy, citation, authors, licence, notices, state |
 | `README.md` | — | features, run, controls, architecture, credits |
 | `AGENTS.md` | — | handoff: commands, architecture, constraints, known issues |
 | `LICENSE` | — | MIT |
@@ -147,6 +147,9 @@ r128 OrbitControls example. Walk look is implemented in-house. Fonts: Chonburi, 
 `THIRD_PARTY_NOTICES.md`.
 
 ## Revisions after the original freeze
+
+- **Documentation completion:** privacy, browser support, design language, gallery, Thai glossary and
+  citation metadata added and linked across the README, documentation index and handoff.
 
 - **Documentation release:** version 1.1.0 adds the release documentation set, GitHub templates, a
   static CI check and a changelog. The behaviour is unchanged after the drag-look/zoom revision above.

@@ -182,10 +182,11 @@ north–south near `x = -26`. Geography is compressed and interpretive.
 
 - [Documentation index](docs/README.md)
 - [Controls](docs/CONTROLS.md) · [Architecture](docs/ARCHITECTURE.md) · [Data format](docs/DATA_FORMAT.md)
+- [Browser support](docs/BROWSER_SUPPORT.md) · [Design language](docs/DESIGN.md) · [Gallery](docs/GALLERY.md) · [Glossary](docs/GLOSSARY.md)
 - [Testing](docs/TESTING.md) · [Deployment](docs/DEPLOYMENT.md) · [Release checklist](docs/RELEASE_CHECKLIST.md)
 - [Accessibility](docs/ACCESSIBILITY.md) · [Performance](docs/PERFORMANCE.md) · [FAQ](docs/FAQ.md) · [Roadmap](docs/ROADMAP.md)
-- [Contributing](CONTRIBUTING.md) · [Code of Conduct](CODE_OF_CONDUCT.md) · [Security](SECURITY.md) · [Support](SUPPORT.md)
-- [Changelog](CHANGELOG.md) · [Authors](AUTHORS.md) · [Third-party notices](THIRD_PARTY_NOTICES.md)
+- [Contributing](CONTRIBUTING.md) · [Code of Conduct](CODE_OF_CONDUCT.md) · [Security](SECURITY.md) · [Support](SUPPORT.md) · [Privacy](PRIVACY.md)
+- [Changelog](CHANGELOG.md) · [Authors](AUTHORS.md) · [Third-party notices](THIRD_PARTY_NOTICES.md) · [Citation](CITATION.cff)
 
 ## Status
 
