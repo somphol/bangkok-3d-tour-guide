@@ -5,6 +5,9 @@ reviewers, maintainers and anyone adapting the project.
 
 | Document | Read it for |
 | --- | --- |
+| [Handoff and reproduction](HANDOFF.md) | The complete continuation record for a new agent after this session |
+| [Requirements](REQUIREMENTS.md) | Original brief, user amendments and acceptance criteria |
+| [Code map](CODE_MAP.md) | Functions, constants, DOM/state/API contracts, invariants |
 | [Controls](CONTROLS.md) | Every mouse, keyboard, wheel, touch and walk-pad interaction |
 | [Architecture](ARCHITECTURE.md) | How the single static app is assembled and why |
 | [Data format](DATA_FORMAT.md) | `localStorage`, exported `bangkok_3d_tour.json`, import rules |

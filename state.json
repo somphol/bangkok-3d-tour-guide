@@ -20,14 +20,14 @@
     "publishedDurationHuman": "1h 5m 29s"
   },
   "tokens": {
-    "input": 812232,
-    "output": 248385,
-    "reasoning": 234520,
-    "cacheRead": 162082048,
+    "input": 841673,
+    "output": 263870,
+    "reasoning": 240921,
+    "cacheRead": 169568768,
     "cacheWrite": 1230,
-    "total": 1295137,
-    "totalWithCache": 163378415,
-    "note": "Snapshot from the OpenCode session record at 2026-11-03T05:37:00Z, after adding the release documentation set (privacy, browser support, design, gallery, glossary, citation). total = input + output + reasoning. Cache reads/writes are context-usage figures and are reported separately; the final commit, Pages rebuild and closing response add a small amount more.",
+    "total": 1346464,
+    "totalWithCache": 170916462,
+    "note": "Snapshot from the OpenCode session record at 2026-11-03T05:41:48Z, after adding the agent handoff, requirements and code map. total = input + output + reasoning. Cache reads/writes are context-usage figures and are reported separately; the final commit, Pages rebuild and closing response add a small amount more.",
     "cost": 0.0
   },
   "cost": {
@@ -111,7 +111,7 @@
     "script.js": 4346,
     "screenshots": 10,
     "totalRepositoryBytesApprox": 3200000,
-    "docs": 15,
+    "docs": 18,
     "rootPolicies": 11
   },
   "credits": {
@@ -156,6 +156,10 @@
     {
       "at": "2026-11-03T05:37:00Z",
       "summary": "Documentation: added privacy policy, browser-support matrix, design language, screenshot gallery, Thai glossary and CITATION.cff; linked them from README, docs index, AGENTS and deployment records. No runtime change; version remains 1.2.0."
+    },
+    {
+      "at": "2026-11-03T05:41:48Z",
+      "summary": "Documentation: added a complete agent handoff/reproduction guide, preserved requirements/acceptance criteria and a code map; rewrote AGENTS.md and linked the documents from README and the docs index. No runtime change; version remains 1.2.0."
     }
   ],
   "projectVersion": "1.2.0",

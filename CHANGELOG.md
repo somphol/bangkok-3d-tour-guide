@@ -11,6 +11,8 @@ project uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 - Added a privacy policy, browser-support matrix, design-language guide, screenshot gallery, Thai
   glossary and CITATION.cff metadata. These document the shipped 1.2.0 build without changing runtime
   behaviour.
+- Added a complete agent handoff/reproduction guide, preserved requirements, and a code map so the
+  project remains intelligible after the build session ends.
 
 ## [1.2.0] — 2026-11-03
 

@@ -180,7 +180,8 @@ north–south near `x = -26`. Geography is compressed and interpretive.
 
 ## Documentation
 
-- [Documentation index](docs/README.md)
+- **New agents/contributors:** start with [AGENTS.md](AGENTS.md) and the [complete handoff](docs/HANDOFF.md)
+- [Documentation index](docs/README.md) · [Original requirements](docs/REQUIREMENTS.md) · [Code map](docs/CODE_MAP.md)
 - [Controls](docs/CONTROLS.md) · [Architecture](docs/ARCHITECTURE.md) · [Data format](docs/DATA_FORMAT.md)
 - [Browser support](docs/BROWSER_SUPPORT.md) · [Design language](docs/DESIGN.md) · [Gallery](docs/GALLERY.md) · [Glossary](docs/GLOSSARY.md)
 - [Testing](docs/TESTING.md) · [Deployment](docs/DEPLOYMENT.md) · [Release checklist](docs/RELEASE_CHECKLIST.md)
