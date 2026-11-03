@@ -20,14 +20,14 @@
     "publishedDurationHuman": "1h 5m 29s"
   },
   "tokens": {
-    "input": 763776,
-    "output": 230441,
-    "reasoning": 214884,
-    "cacheRead": 143166592,
+    "input": 795219,
+    "output": 239137,
+    "reasoning": 229271,
+    "cacheRead": 153624832,
     "cacheWrite": 1230,
-    "total": 1209101,
-    "totalWithCache": 144376923,
-    "note": "Snapshot from the OpenCode session record at 2026-11-03T05:10:02Z, after the 1.1.3 on-screen walk pad release and local verification. total = input + output + reasoning. Cache reads/writes are context-usage figures and are reported separately; the final commit, Pages rebuild and closing response add a small amount more.",
+    "total": 1263627,
+    "totalWithCache": 154889689,
+    "note": "Snapshot from the OpenCode session record at 2026-11-03T05:30:09Z, after the 1.2.0 low-poly traffic release and local verification. total = input + output + reasoning. Cache reads/writes are context-usage figures and are reported separately; the final commit, Pages rebuild and closing response add a small amount more.",
     "cost": 0.0
   },
   "cost": {
@@ -108,7 +108,7 @@
   "files": {
     "index.html": 272,
     "style.css": 1425,
-    "script.js": 4256,
+    "script.js": 4346,
     "screenshots": 10,
     "totalRepositoryBytesApprox": 3200000,
     "docs": 11,
@@ -148,15 +148,19 @@
     {
       "at": "2026-11-03T05:10:02Z",
       "summary": "Patch: added a mouse/touch on-screen walk pad; restricted walk-mode picking to marker meshes only; local CSS/JS cache-busting; walking is keyboard-optional. Version 1.1.3."
+    },
+    {
+      "at": "2026-11-03T05:30:09Z",
+      "summary": "Feature: replaced box traffic with layered low-poly cars (tapered body, glass cabin, roof, four wheels, head/tail lights) using six instanced meshes. Version 1.2.0."
     }
   ],
-  "projectVersion": "1.1.3",
-  "version": "1.1.3",
+  "projectVersion": "1.2.0",
+  "version": "1.2.0",
   "release": {
-    "version": "1.1.3",
-    "tag": "v1.1.3",
-    "previous": "v1.1.2",
-    "url": "https://github.com/somphol/bangkok-3d-tour-guide/releases/tag/v1.1.3",
-    "publishedAt": "2026-11-03T05:10:02Z"
+    "version": "1.2.0",
+    "tag": "v1.2.0",
+    "previous": "v1.1.3",
+    "url": "https://github.com/somphol/bangkok-3d-tour-guide/releases/tag/v1.2.0",
+    "publishedAt": "2026-11-03T05:30:09Z"
   }
 }

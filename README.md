@@ -1,7 +1,7 @@
 # Bangkok 3D — Interactive Urban Tourist Guide & Explorer Studio
 
 [![Live demo](https://img.shields.io/badge/live-demo-e7c27d)](https://somphol.github.io/bangkok-3d-tour-guide/)
-[![Release](https://img.shields.io/badge/release-v1.1.3-6cbcac)](CHANGELOG.md)
+[![Release](https://img.shields.io/badge/release-v1.2.0-6cbcac)](CHANGELOG.md)
 [![License: MIT](https://img.shields.io/badge/license-MIT-brightgreen)](LICENSE)
 [![No build](https://img.shields.io/badge/build-none-lightgrey)](docs/ARCHITECTURE.md)
 
@@ -189,9 +189,9 @@ north–south near `x = -26`. Geography is compressed and interpretive.
 
 ## Status
 
-Version **1.1.3**. Walk with the on-screen arrow pad, arrow keys or WASD. This release makes
-walking work without a keyboard and fixes accidental guide opening during scene clicks. Runtime
-dependencies are pinned CDN files; there is no package manager and no build artifact.
+Version **1.2.0**. Walk with the on-screen arrow pad, arrow keys or WASD, and watch the richer
+low-poly traffic. Runtime dependencies are pinned CDN files; there is no package manager and no build
+artifact.
 
 ## Credits
 

@@ -3,7 +3,7 @@
 | Field | Value |
 | --- | --- |
 | Project | Bangkok 3D — Interactive Urban Tourist Guide & Explorer Studio (`bangkok-3d-tour-guide`) |
-| Version | **1.1.3** |
+| Version | **1.2.0** |
 | Session started | 2026-11-03 02:46:41 UTC |
 | Build started | 2026-11-03 02:48:24 UTC |
 | Source frozen | 2026-11-03 03:49:43 UTC |
@@ -16,22 +16,22 @@
 | Session | `ses_e60b2c542ffezeHzunC0PwPEEY` |
 | Repository | <https://github.com/somphol/bangkok-3d-tour-guide> |
 | Live demo | <https://somphol.github.io/bangkok-3d-tour-guide/> |
-| Release | [v1.1.3](https://github.com/somphol/bangkok-3d-tour-guide/releases/tag/v1.1.3) · previous [v1.1.2](https://github.com/somphol/bangkok-3d-tour-guide/releases/tag/v1.1.2) |
+| Release | [v1.2.0](https://github.com/somphol/bangkok-3d-tour-guide/releases/tag/v1.2.0) · previous [v1.1.3](https://github.com/somphol/bangkok-3d-tour-guide/releases/tag/v1.1.3) |
 | Self-test | **24 / 24 PASS** (local and live, zero runtime errors) |
 
 ## Token usage
 
 | Metric | Tokens |
 | --- | ---: |
-| Input | 763,776 |
-| Output | 230,441 |
-| Reasoning | 214,884 |
-| **Total (input + output + reasoning)** | **1,209,101** |
-| Cache read | 143,166,592 |
+| Input | 795,219 |
+| Output | 239,137 |
+| Reasoning | 229,271 |
+| **Total (input + output + reasoning)** | **1,263,627** |
+| Cache read | 153,624,832 |
 | Cache write | 1,230 |
-| Total including cache | 144,376,923 |
+| Total including cache | 154,889,689 |
 
-> Snapshot from the OpenCode session record at 2026-11-03T05:10:02Z, after the 1.1.3 on-screen walk pad release and
+> Snapshot from the OpenCode session record at 2026-11-03T05:30:09Z, after the 1.2.0 low-poly traffic release and
 > local verification. Total cost reported by the session: **$0.00**. The final commit, Pages rebuild
 > and closing response add a small amount more. Cache reads/writes are context-usage figures and are
 > reported separately from the input/output/reasoning total.
@@ -161,6 +161,8 @@ r128 OrbitControls example. Walk look is implemented in-house. Fonts: Chonburi, 
   scrolling and are documented alongside WASD.
 - **Patch 1.1.3:** on-screen mouse/touch walk pad added; Walk-mode clicks only select the small marker
   icons; CSS/JS cache-busting added.
+- **Feature 1.2.0:** layered low-poly traffic with body, cabin, roof, wheels, headlights and tail lights;
+  still six instanced draw calls.
 
 ## Post-freeze work
 

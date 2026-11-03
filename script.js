@@ -18,7 +18,7 @@
 
   const APP = {
     name: 'Bangkok 3D — Interactive Urban Tourist Guide & Explorer Studio',
-    version: '1.1.3',
+    version: '1.2.0',
     city: 'Bangkok',
     storageKey: 'bangkok3d.state.v1',
     exportName: 'bangkok_3d_tour.json',
@@ -656,7 +656,8 @@
   let markerRoot, markerRecords = [], pickTargets = [], landmarkGroups = [];
   let hoveredId = null;
   let colliders = [];
-  let carMesh, carData = [];
+  let carBodyMesh, carCabinMesh, carRoofMesh, carWheelMesh, carHeadMesh, carTailMesh, carData = [];
+  let carHeadMat = null, carTailMat = null;
   let lampGlowMat, windowMats = [], neonMats = [], lampMats = [];
   let clouds = [];
   let boatRecords = [];
@@ -684,6 +685,12 @@
   const tmpObj = THREE_OK ? new THREE.Object3D() : null;
   const tmpVec = THREE_OK ? new THREE.Vector3() : null;
   const tmpColor = THREE_OK ? new THREE.Color() : null;
+  const CAR_ROOT = THREE_OK ? new THREE.Matrix4() : null;
+  const CAR_LOCAL = THREE_OK ? new THREE.Matrix4() : null;
+  const CAR_QUAT = THREE_OK ? new THREE.Quaternion() : null;
+  const CAR_POS = THREE_OK ? new THREE.Vector3() : null;
+  const CAR_SCALE = THREE_OK ? new THREE.Vector3() : null;
+  const CAR_Y_AXIS = THREE_OK ? new THREE.Vector3(0, 1, 0) : null;
 
   const PRESETS = {
     day: {
@@ -1196,6 +1203,8 @@
       baiyokeBeacon.material.emissiveIntensity = 0.2 + m.night * 2.5;
     }
     if (lampGlowMat) lampGlowMat.opacity = 0.05 + m.night * 0.82;
+    if (carHeadMat) carHeadMat.emissiveIntensity = 0.25 + m.night * 2.6;
+    if (carTailMat) carTailMat.emissiveIntensity = 0.2 + m.night * 2.0;
     markerRecords.forEach((m) => {
       if (m.glow) m.glow.material.opacity = 0.22 + m.night * 0.5;
     });
@@ -1793,22 +1802,65 @@
     scene.add(new THREE.Points(glowGeo, lampGlowMat));
   }
 
+  function taperedCarShell(baseW, baseD, topW, topD) {
+    const bw = baseW / 2, bd = baseD / 2, tw = topW / 2, td = topD / 2;
+    const geo = new THREE.BufferGeometry();
+    geo.setAttribute('position', new THREE.BufferAttribute(new Float32Array([
+      -bw, 0, -bd, bw, 0, -bd, bw, 0, bd, -bw, 0, bd,
+      -tw, 1, -td, tw, 1, -td, tw, 1, td, -tw, 1, td
+    ]), 3));
+    geo.setIndex([
+      0, 1, 5, 0, 5, 4,
+      3, 2, 6, 3, 6, 7,
+      1, 2, 6, 1, 6, 5,
+      0, 3, 7, 0, 7, 4,
+      4, 5, 6, 4, 6, 7,
+      0, 2, 1, 0, 3, 2
+    ]);
+    geo.computeVertexNormals();
+    return geo;
+  }
+
   function buildTraffic() {
     const defs = [];
     world.eastRoadX.concat(world.westRoadX).forEach((x) => defs.push({ axis: 'z', at: x }));
     world.eastRoadZ.forEach((z) => defs.push({ axis: 'x', at: z }));
-    const palette = [0xe8e0cc, 0xc94f3f, 0x3f6fa8, 0xd0a03c, 0x5e9a72, 0xd8d8d8, 0x2c343a, 0xb887a4];
+    const palette = [
+      0xe8e0cc, 0xc94f3f, 0x3f6fa8, 0xd0a03c, 0x5e9a72, 0xd8d8d8,
+      0x2c343a, 0xb887a4, 0xf0b323, 0xd96c9a, 0xed6a2c, 0x6b8fc5
+    ];
     const count = 108;
-    const geo = new THREE.BoxGeometry(1, 1, 1);
-    const mat = new THREE.MeshStandardMaterial({ color: 0xffffff, roughness: 0.55, metalness: 0.3, emissive: 0x0a0a0a, emissiveIntensity: 0.2 });
-    carMesh = new THREE.InstancedMesh(geo, mat, count);
-    carMesh.castShadow = false;
-    carMesh.receiveShadow = false;
+
+    const bodyMat = new THREE.MeshStandardMaterial({ color: 0xffffff, roughness: 0.42, metalness: 0.36, side: THREE.DoubleSide });
+    const glassMat = new THREE.MeshStandardMaterial({ color: srgb(0x17262e), roughness: 0.12, metalness: 0.7, side: THREE.DoubleSide });
+    const wheelMat = new THREE.MeshStandardMaterial({ color: srgb(0x0b0b0d), roughness: 0.9, metalness: 0.1 });
+    carHeadMat = new THREE.MeshStandardMaterial({ color: srgb(0xfff2ca), emissive: srgb(0xffe0a0), emissiveIntensity: 0.3, roughness: 0.35 });
+    carTailMat = new THREE.MeshStandardMaterial({ color: srgb(0xb51f1f), emissive: srgb(0xff2a1a), emissiveIntensity: 0.25, roughness: 0.4 });
+
+    const bodyGeo = taperedCarShell(1, 1, 0.88, 0.94);
+    const cabinGeo = taperedCarShell(1, 1, 0.68, 0.62);
+    const roofGeo = new THREE.BoxGeometry(1, 1, 1);
+    const wheelGeo = new THREE.CylinderGeometry(0.25, 0.25, 0.18, 10);
+    wheelGeo.rotateZ(Math.PI / 2);
+    const lampGeo = new THREE.BoxGeometry(0.25, 0.12, 0.07);
+
+    carBodyMesh = new THREE.InstancedMesh(bodyGeo, bodyMat, count);
+    carCabinMesh = new THREE.InstancedMesh(cabinGeo, glassMat, count);
+    carRoofMesh = new THREE.InstancedMesh(roofGeo, bodyMat, count);
+    carWheelMesh = new THREE.InstancedMesh(wheelGeo, wheelMat, count * 4);
+    carHeadMesh = new THREE.InstancedMesh(lampGeo, carHeadMat, count * 2);
+    carTailMesh = new THREE.InstancedMesh(lampGeo, carTailMat, count * 2);
+    [carBodyMesh, carCabinMesh, carRoofMesh, carWheelMesh, carHeadMesh, carTailMesh].forEach((m) => {
+      m.castShadow = false;
+      m.receiveShadow = false;
+    });
+
     for (let i = 0; i < count; i++) {
       const d = pick(defs);
       const dir = Math.random() < 0.5 ? 1 : -1;
       const min = d.axis === 'z' ? world.minZ + 4 : world.bankEast + 5;
       const max = d.axis === 'z' ? world.maxZ - 4 : world.maxX - 5;
+      const color = new THREE.Color(pick(palette));
       carData.push({
         axis: d.axis,
         at: d.at + dir * 1.15,
@@ -1817,34 +1869,72 @@
         min,
         max,
         speed: rand(4.5, 10.5),
-        color: new THREE.Color(pick(palette))
+        size: rand(0.9, 1.1),
+        color
       });
-      carMesh.setColorAt(i, carData[i].color);
+      carBodyMesh.setColorAt(i, color);
+      carRoofMesh.setColorAt(i, color);
     }
-    if (carMesh.instanceColor) carMesh.instanceColor.needsUpdate = true;
-    scene.add(carMesh);
+    if (carBodyMesh.instanceColor) carBodyMesh.instanceColor.needsUpdate = true;
+    if (carRoofMesh.instanceColor) carRoofMesh.instanceColor.needsUpdate = true;
+    scene.add(carBodyMesh, carCabinMesh, carRoofMesh, carWheelMesh, carHeadMesh, carTailMesh);
+  }
+
+  function setCarPart(mesh, index, root, lx, ly, lz, sx, sy, sz) {
+    CAR_POS.set(lx, ly, lz);
+    CAR_QUAT.identity();
+    CAR_SCALE.set(sx, sy, sz);
+    CAR_LOCAL.compose(CAR_POS, CAR_QUAT, CAR_SCALE);
+    CAR_LOCAL.premultiply(root);
+    mesh.setMatrixAt(index, CAR_LOCAL);
   }
 
   function updateTraffic(dt) {
-    if (!carMesh) return;
-    for (let i = 0; i < carData.length; i++) {
-      const c = carData[i];
+    if (!carBodyMesh) return;
+    carData.forEach((c, i) => {
       c.pos += c.dir * c.speed * dt;
       if (c.pos > c.max) c.pos = c.min;
       if (c.pos < c.min) c.pos = c.max;
+
       const x = c.axis === 'z' ? c.at : c.pos;
       const z = c.axis === 'z' ? c.pos : c.at;
-      let visible = !inPlaza(x, z, 2.2);
-      const s = visible ? 1 : 0.0001;
-      tmpObj.position.set(x, 0.52, z);
-      tmpObj.rotation.set(0, c.axis === 'z' ? 0 : Math.PI / 2, 0);
-      tmpObj.scale.set(c.axis === 'z' ? 0.95 : 1.85, 0.52, c.axis === 'z' ? 1.85 : 0.95);
-      tmpObj.updateMatrix();
-      if (!visible) tmpObj.scale.set(s, s, s);
-      tmpObj.updateMatrix();
-      carMesh.setMatrixAt(i, tmpObj.matrix);
-    }
-    carMesh.instanceMatrix.needsUpdate = true;
+      const visible = !inPlaza(x, z, 2.2);
+      const yaw = c.axis === 'z'
+        ? (c.dir > 0 ? 0 : Math.PI)
+        : (c.dir > 0 ? Math.PI / 2 : -Math.PI / 2);
+
+      const s = visible ? c.size : 0.0001;
+      CAR_POS.set(x, 0, z);
+      CAR_QUAT.setFromAxisAngle(CAR_Y_AXIS, yaw);
+      CAR_SCALE.set(s, s, s);
+      CAR_ROOT.compose(CAR_POS, CAR_QUAT, CAR_SCALE);
+
+      // Tapered body and dark cabin.
+      setCarPart(carBodyMesh, i, CAR_ROOT, 0, 0.34, 0, 1.04, 0.46, 2.25);
+      setCarPart(carCabinMesh, i, CAR_ROOT, 0, 0.78, -0.08, 0.86, 0.38, 1.18);
+      setCarPart(carRoofMesh, i, CAR_ROOT, 0, 1.18, -0.08, 0.7, 0.055, 0.98);
+
+      // Four wheels, local +Z is the front of the car.
+      const wx = 0.55, wz = 0.72;
+      for (let w = 0; w < 4; w++) {
+        const sx = w < 2 ? -wx : wx;
+        const sz = w % 2 === 0 ? -wz : wz;
+        setCarPart(carWheelMesh, i * 4 + w, CAR_ROOT, sx, 0.27, sz, 1, 1, 1);
+      }
+
+      // Headlights at the front, tail lights at the rear.
+      setCarPart(carHeadMesh, i * 2, CAR_ROOT, -0.31, 0.6, 1.13, 1, 1, 1);
+      setCarPart(carHeadMesh, i * 2 + 1, CAR_ROOT, 0.31, 0.6, 1.13, 1, 1, 1);
+      setCarPart(carTailMesh, i * 2, CAR_ROOT, -0.31, 0.6, -1.13, 1, 1, 1);
+      setCarPart(carTailMesh, i * 2 + 1, CAR_ROOT, 0.31, 0.6, -1.13, 1, 1, 1);
+    });
+
+    carBodyMesh.instanceMatrix.needsUpdate = true;
+    carCabinMesh.instanceMatrix.needsUpdate = true;
+    carRoofMesh.instanceMatrix.needsUpdate = true;
+    carWheelMesh.instanceMatrix.needsUpdate = true;
+    carHeadMesh.instanceMatrix.needsUpdate = true;
+    carTailMesh.instanceMatrix.needsUpdate = true;
   }
 
   function buildBoats() {
@@ -4201,7 +4291,7 @@
     check('three camera modes', () => ['drone', 'walk', 'tour'].every((m) => typeof m === 'string') && !!orbit && !!walkLook);
     check('walk drag-look and zoom', () => typeof applyViewFov === 'function' && typeof onWheelZoom === 'function' && ZOOM_MIN < ZOOM_MAX);
     check('walk collision field', () => colliders.length > 60);
-    check('traffic instances', () => !!carMesh && carMesh.count > 50);
+    check('traffic instances', () => !!carBodyMesh && carBodyMesh.count > 50);
     check('river shader', () => !!waterMat && waterMat.uniforms.uTime.value >= 0);
     check('local state roundtrip', () => {
       const s = sanitiseState(JSON.parse(JSON.stringify(state)));

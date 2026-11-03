@@ -14,7 +14,8 @@ on every device.
 - Five hand-authored landmark groups with a few hundred small meshes in total.
 - Roughly 70–90 city blocks/parcels, depending on the randomised block fill.
 - Eight shared facade material sets (colour + emissive canvas textures).
-- Instanced trees (trunks and canopies), street lamps, lane dashes and cars (108 instances).
+- Instanced trees (trunks and canopies), street lamps, lane dashes and 108 cars split into six instanced
+  component meshes (body, cabin, roof, wheels, headlights, tail lights).
 - Three animated boats.
 - A custom water shader, sky shader, stars, sun/moon sprites and nine clouds.
 - One 2048² directional shadow map covering the central city.

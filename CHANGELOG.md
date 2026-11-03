@@ -4,6 +4,22 @@ All notable changes to **Bangkok 3D — Interactive Urban Tourist Guide & Explor
 documented here. The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and the
 project uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.2.0] — 2026-11-03
+
+### Added
+
+- Layered low-poly traffic: tapered body shells, dark glass cabins, colour-matched roof panels, four
+  visible wheels, warm headlights and red tail lights. Cars are still six instanced meshes, so the
+  richer silhouette does not multiply draw calls into the hundreds.
+- Direction-aware car orientation, body-colour variety and per-car scale variation.
+
+### Changed
+
+- Vehicle lights respond to the time-of-day preset (day/dusk/night).
+- Traffic now reads as cars rather than single moving boxes at both street and skyline scale.
+
+[1.2.0]: https://github.com/somphol/bangkok-3d-tour-guide/compare/v1.1.3...v1.2.0
+
 ## [1.1.3] — 2026-11-03
 
 ### Added
