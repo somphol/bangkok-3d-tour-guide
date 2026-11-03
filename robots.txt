@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://somphol.github.io/bangkok-3d-tour-guide/sitemap.xml

@@ -1,0 +1,122 @@
+{
+  "project": "bangkok-3d-tour-guide",
+  "title": "Bangkok 3D \u2014 Interactive Urban Tourist Guide & Explorer Studio",
+  "description": "A complete, self-contained interactive 3D tourist guide to Bangkok built in vanilla HTML5, CSS3 and ES6 with Three.js r128. It renders a compressed Rattanakosin city around the Chao Phraya with five hand-built landmarks \u2014 Wat Arun, Wat Pho, the Grand Palace, the Golden Mount and Baiyoke Tower II \u2014 plus procedural blocks, roads, bridges, parks, traffic, boats, river shaders and floating markers. Three camera modes (OrbitControls drone, PointerLockControls street walk with collision and footsteps, and an automated Catmull-Rom transit tour with five dwell stops), bilingual English/Thai copy and narration, midday/golden-hour/neon-night lighting, synthesised spatial Web Audio ambience, a live minimap, and localStorage plus JSON itinerary export/import.",
+  "repository": "https://github.com/somphol/bangkok-3d-tour-guide",
+  "liveDemo": "https://somphol.github.io/bangkok-3d-tour-guide/",
+  "build": {
+    "sessionStartedAt": "2026-11-03T02:46:41Z",
+    "startedAt": "2026-11-03T02:48:24Z",
+    "packagedAt": "2026-11-03T03:49:43Z",
+    "durationSeconds": 3679,
+    "durationHuman": "1h 1m 19s",
+    "sessionDurationSeconds": 3782,
+    "sessionDurationHuman": "1h 3m 2s",
+    "timezone": "UTC",
+    "includes": "Project scaffold; renderer, sky shader, stars, sun and moon; sRGB-correct materials and eight procedural facade texture sets; Chao Phraya river with animated water shader, embankments, promenade, railings and lamps; road grid, lane markings, crossings, two bridges, parks, ponds, trees, street lamps and instanced traffic; five procedural landmark models (Wat Arun prangs and porcelain bands; Wat Pho ubosot, four chedis and open-canopy Reclining Buddha; Grand Palace crenellated walls, Wat Phra Kaew, golden chedi and Chakri Maha Prasat; Golden Mount terraced hill with spiral path and gold chedi; Baiyoke glass tower with observation crown, neon and beacon); five bobbing 3D markers and pick volumes; drone, first-person walk with collision, sprint, head bob and footsteps, and a five-stop spline transit tour; EN/TH UI and landmark copy; three lighting presets with smooth transitions; spatial Web Audio synthesis and speech narration; minimap; visited stamps, route builder and notes; localStorage autosave; JSON export/import as bangkok_3d_tour.json; 23-check self-test; responsive mobile layout; documentation, licence, notices, robots, sitemap and GitHub Pages deployment.",
+    "note": "packagedAt is the source-freeze timestamp. The final commit, GitHub push and Pages verification happen after this snapshot and add a small amount of time and tokens."
+  },
+  "tokens": {
+    "input": 554647,
+    "output": 143504,
+    "reasoning": 143617,
+    "cacheRead": 68109952,
+    "cacheWrite": 1230,
+    "total": 841768,
+    "totalWithCache": 68952950,
+    "note": "Snapshot from the OpenCode session record at 2026-11-03T03:49:43Z, immediately before the source freeze. total = input + output + reasoning. Cache reads/writes are context-usage figures and are reported separately. The final state commit, GitHub push, Pages build and closing response happen after this snapshot, so live session totals are marginally higher.",
+    "cost": 0.0
+  },
+  "cost": {
+    "usd": 0.0,
+    "note": "As reported by the OpenCode session record."
+  },
+  "sessionId": "ses_e60b2c542ffezeHzunC0PwPEEY",
+  "sessionTitle": "Bangkok 3D Tourist Guide Project",
+  "model": {
+    "name": "DeepSeek V4.1 Flash",
+    "providerID": "opencode-go",
+    "modelID": "deepseek-v4.1-flash"
+  },
+  "harness": {
+    "name": "OpenCode",
+    "version": "2.2.5",
+    "url": "https://opencode.ai"
+  },
+  "stack": {
+    "runtime": [
+      "HTML5",
+      "CSS3",
+      "ES6 JavaScript"
+    ],
+    "graphics": [
+      "Three.js r128",
+      "OrbitControls r128",
+      "PointerLockControls r128"
+    ],
+    "audio": [
+      "Web Audio API synthesis",
+      "SpeechSynthesis narration"
+    ],
+    "storage": [
+      "localStorage",
+      "JSON file export/import"
+    ],
+    "fonts": [
+      "Chonburi",
+      "Kanit",
+      "Cormorant Garamond"
+    ]
+  },
+  "features": {
+    "landmarks": 5,
+    "cameraModes": 3,
+    "lightingPresets": 3,
+    "languages": 2,
+    "tourStops": 5,
+    "exportFilename": "bangkok_3d_tour.json",
+    "storageKey": "bangkok3d.state.v1"
+  },
+  "verification": {
+    "selfTest": "23 / 23 PASS",
+    "browser": "Chrome 156 headless with ANGLE/SwiftShader",
+    "consoleErrors": 0,
+    "flowsChecked": [
+      "boot, loader and intro",
+      "URL reset/autostart/mode/preset/lang/drawer",
+      "drone orbit and recenter",
+      "first-person walk movement and nearest-landmark hint",
+      "transit tour start, next stop, pause and stop framing",
+      "three lighting presets",
+      "EN/TH switch with an open drawer",
+      "marker raycast picking",
+      "visited, itinerary and notes persistence",
+      "localStorage reload",
+      "JSON download with the required filename",
+      "JSON import from disk",
+      "mobile 430\u00d7900 layout",
+      "self-test 23/23 with zero runtime errors"
+    ]
+  },
+  "files": {
+    "index.html": 266,
+    "style.css": 1375,
+    "script.js": 4100,
+    "screenshots": 10,
+    "totalRepositoryBytesApprox": 3200000
+  },
+  "credits": {
+    "builtWith": "OpenCode",
+    "model": "DeepSeek V4.1 Flash",
+    "graphics": "Three.js r128 (MIT)",
+    "fonts": "Google Fonts / SIL OFL 1.1",
+    "attribution": "THIRD_PARTY_NOTICES.md"
+  },
+  "notes": [
+    "All geometry, textures, audio and copy are original; no photographs, map tiles or external models are redistributed.",
+    "Geography is deliberately compressed and interpretive, not survey data.",
+    "Fees and hours are a 2026 travel-guide snapshot and are not fetched live.",
+    "Walk mode is keyboard and mouse only; the walkable area is the east bank.",
+    "The final GitHub Pages deployment is verified after this snapshot."
+  ]
+}
