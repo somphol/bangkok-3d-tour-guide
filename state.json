@@ -1,7 +1,7 @@
 {
   "project": "bangkok-3d-tour-guide",
   "title": "Bangkok 3D \u2014 Interactive Urban Tourist Guide & Explorer Studio",
-  "description": "A complete, self-contained interactive 3D tourist guide to Bangkok built in vanilla HTML5, CSS3 and ES6 with Three.js r128. It renders a compressed Rattanakosin city around the Chao Phraya with five hand-built landmarks \u2014 Wat Arun, Wat Pho, the Grand Palace, the Golden Mount and Baiyoke Tower II \u2014 plus procedural blocks, roads, bridges, parks, traffic, boats, river shaders and floating markers. Three camera modes (OrbitControls drone, PointerLockControls street walk with collision and footsteps, and an automated Catmull-Rom transit tour with five dwell stops), bilingual English/Thai copy and narration, midday/golden-hour/neon-night lighting, synthesised spatial Web Audio ambience, a live minimap, and localStorage plus JSON itinerary export/import.",
+  "description": "A complete, self-contained interactive 3D tourist guide to Bangkok built in vanilla HTML5, CSS3 and ES6 with Three.js r128. It renders a compressed Rattanakosin city around the Chao Phraya with five hand-built landmarks \u2014 Wat Arun, Wat Pho, the Grand Palace, the Golden Mount and Baiyoke Tower II \u2014 plus procedural blocks, roads, bridges, parks, traffic, boats, river shaders and floating markers. Three camera modes (OrbitControls drone, drag-to-look street walk with collision, scroll zoom and footsteps, and an automated Catmull-Rom transit tour with five dwell stops), bilingual English/Thai copy and narration, midday/golden-hour/neon-night lighting, synthesised spatial Web Audio ambience, a live minimap, and localStorage plus JSON itinerary export/import.",
   "repository": "https://github.com/somphol/bangkok-3d-tour-guide",
   "liveDemo": "https://somphol.github.io/bangkok-3d-tour-guide/",
   "build": {
@@ -13,21 +13,21 @@
     "sessionDurationSeconds": 3782,
     "sessionDurationHuman": "1h 3m 2s",
     "timezone": "UTC",
-    "includes": "Project scaffold; renderer, sky shader, stars, sun and moon; sRGB-correct materials and eight procedural facade texture sets; Chao Phraya river with animated water shader, embankments, promenade, railings and lamps; road grid, lane markings, crossings, two bridges, parks, ponds, trees, street lamps and instanced traffic; five procedural landmark models (Wat Arun prangs and porcelain bands; Wat Pho ubosot, four chedis and open-canopy Reclining Buddha; Grand Palace crenellated walls, Wat Phra Kaew, golden chedi and Chakri Maha Prasat; Golden Mount terraced hill with spiral path and gold chedi; Baiyoke glass tower with observation crown, neon and beacon); five bobbing 3D markers and pick volumes; drone, first-person walk with collision, sprint, head bob and footsteps, and a five-stop spline transit tour; EN/TH UI and landmark copy; three lighting presets with smooth transitions; spatial Web Audio synthesis and speech narration; minimap; visited stamps, route builder and notes; localStorage autosave; JSON export/import as bangkok_3d_tour.json; 23-check self-test; responsive mobile layout; documentation, licence, notices, robots, sitemap and GitHub Pages deployment.",
+    "includes": "Project scaffold; renderer, sky shader, stars, sun and moon; sRGB-correct materials and eight procedural facade texture sets; Chao Phraya river with animated water shader, embankments, promenade, railings and lamps; road grid, lane markings, crossings, two bridges, parks, ponds, trees, street lamps and instanced traffic; five procedural landmark models (Wat Arun prangs and porcelain bands; Wat Pho ubosot, four chedis and open-canopy Reclining Buddha; Grand Palace crenellated walls, Wat Phra Kaew, golden chedi and Chakri Maha Prasat; Golden Mount terraced hill with spiral path and gold chedi; Baiyoke glass tower with observation crown, neon and beacon); five bobbing 3D markers and pick volumes; drone, first-person walk with collision, sprint, head bob and footsteps, and a five-stop spline transit tour; EN/TH UI and landmark copy; three lighting presets with smooth transitions; spatial Web Audio synthesis and speech narration; minimap; visited stamps, route builder and notes; localStorage autosave; JSON export/import as bangkok_3d_tour.json; 24-check self-test; responsive mobile layout; documentation, licence, notices, robots, sitemap and GitHub Pages deployment.",
     "note": "packagedAt is the source-freeze timestamp; publishedAt is when the GitHub Pages deployment was verified. Tokens are snapshotted at publishedAt, before the final state commit/push and closing response.",
     "publishedAt": "2026-11-03T03:52:10Z",
     "publishedDurationSeconds": 3929,
     "publishedDurationHuman": "1h 5m 29s"
   },
   "tokens": {
-    "input": 564636,
-    "output": 146794,
-    "reasoning": 148088,
-    "cacheRead": 70714752,
+    "input": 621231,
+    "output": 162988,
+    "reasoning": 169518,
+    "cacheRead": 85821696,
     "cacheWrite": 1230,
-    "total": 859518,
-    "totalWithCache": 71575500,
-    "note": "Snapshot from the OpenCode session record at 2026-11-03T03:52:10Z, after the live GitHub Pages self-test (23/23) and before the final state-file commit and closing response. total = input + output + reasoning. Cache reads/writes are context-usage figures and are reported separately; those final actions add a small amount more.",
+    "total": 953737,
+    "totalWithCache": 86776663,
+    "note": "Snapshot from the OpenCode session record at 2026-11-03T04:05:57Z, after the post-publish drag-look/zoom revision and its local verification. total = input + output + reasoning. Cache reads/writes are context-usage figures and are reported separately; the final commit, Pages rebuild and closing response add a small amount more.",
     "cost": 0.0
   },
   "cost": {
@@ -55,7 +55,7 @@
     "graphics": [
       "Three.js r128",
       "OrbitControls r128",
-      "PointerLockControls r128"
+      "In-house drag-to-look walk"
     ],
     "audio": [
       "Web Audio API synthesis",
@@ -81,7 +81,7 @@
     "storageKey": "bangkok3d.state.v1"
   },
   "verification": {
-    "selfTest": "23 / 23 PASS",
+    "selfTest": "24 / 24 PASS",
     "browser": "Chrome 156 headless with ANGLE/SwiftShader",
     "consoleErrors": 0,
     "flowsChecked": [
@@ -89,6 +89,8 @@
       "URL reset/autostart/mode/preset/lang/drawer",
       "drone orbit and recenter",
       "first-person walk movement and nearest-landmark hint",
+      "walk drag-to-look and scroll-wheel FOV zoom",
+      "tour scroll-wheel FOV zoom",
       "transit tour start, next stop, pause and stop framing",
       "three lighting presets",
       "EN/TH switch with an open drawer",
@@ -98,20 +100,20 @@
       "JSON download with the required filename",
       "JSON import from disk",
       "mobile 430\u00d7900 layout",
-      "self-test 23/23 with zero runtime errors"
+      "self-test 24/24 with zero runtime errors"
     ]
   },
   "files": {
-    "index.html": 266,
-    "style.css": 1375,
-    "script.js": 4100,
+    "index.html": 265,
+    "style.css": 1377,
+    "script.js": 4168,
     "screenshots": 10,
     "totalRepositoryBytesApprox": 3200000
   },
   "credits": {
     "builtWith": "OpenCode",
     "model": "DeepSeek V4.1 Flash",
-    "graphics": "Three.js r128 (MIT)",
+    "graphics": "Three.js r128 (MIT) + OrbitControls",
     "fonts": "Google Fonts / SIL OFL 1.1",
     "attribution": "THIRD_PARTY_NOTICES.md"
   },
@@ -119,7 +121,13 @@
     "All geometry, textures, audio and copy are original; no photographs, map tiles or external models are redistributed.",
     "Geography is deliberately compressed and interpretive, not survey data.",
     "Fees and hours are a 2026 travel-guide snapshot and are not fetched live.",
-    "Walk mode is keyboard and mouse only; the walkable area is the east bank.",
+    "Walk mode uses keyboard movement and mouse drag to look; the walkable area is the east bank.",
     "The final GitHub Pages deployment is verified after this snapshot."
+  ],
+  "revisions": [
+    {
+      "at": "2026-11-03T04:05:57Z",
+      "summary": "Post-publish controls revision: removed pointer-lock mouse capture; walk mode now uses ordinary drag-to-look with scroll-wheel field-of-view zoom. Tour also supports scroll-wheel zoom. Self-test grew from 23 to 24 checks (drag-look + zoom)."
+    }
   ]
 }

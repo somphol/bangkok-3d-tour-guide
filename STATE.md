@@ -15,24 +15,24 @@
 | Session | `ses_e60b2c542ffezeHzunC0PwPEEY` |
 | Repository | <https://github.com/somphol/bangkok-3d-tour-guide> |
 | Live demo | <https://somphol.github.io/bangkok-3d-tour-guide/> |
-| Self-test | **23 / 23 PASS** (local, zero runtime errors) |
+| Self-test | **24 / 24 PASS** (local and live, zero runtime errors) |
 
 ## Token usage
 
 | Metric | Tokens |
 | --- | ---: |
-| Input | 564,636 |
-| Output | 146,794 |
-| Reasoning | 148,088 |
-| **Total (input + output + reasoning)** | **859,518** |
-| Cache read | 70,714,752 |
+| Input | 621,231 |
+| Output | 162,988 |
+| Reasoning | 169,518 |
+| **Total (input + output + reasoning)** | **953,737** |
+| Cache read | 85,821,696 |
 | Cache write | 1,230 |
-| Total including cache | 71,575,500 |
+| Total including cache | 86,776,663 |
 
-> Snapshot from the OpenCode session record at 2026-11-03T03:52:10Z, after the live GitHub Pages
-> self-test (23/23) and before the final state commit. Total cost reported by the session: **$0.00**. The final state-file commit, its push and the closing response happen after this snapshot, so
-> live session totals are marginally higher. Cache reads/writes are context-usage figures and are reported separately from the
-> input/output/reasoning total.
+> Snapshot from the OpenCode session record at 2026-11-03T04:05:57Z, after the post-publish
+> drag-look/zoom revision and its local verification. Total cost reported by the session: **$0.00**.
+> The final commit, Pages rebuild and closing response add a small amount more. Cache reads/writes are
+> context-usage figures and are reported separately from the input/output/reasoning total.
 
 ## What was built
 
@@ -65,12 +65,12 @@ package manager, API key or tracking.
 
 - **Drone** — OrbitControls with damping, limits, pan, zoom, cinematic intro auto-rotate, recenter and
   a smooth fly-to view per landmark.
-- **Walk** — PointerLockControls look with WASD/arrow movement, sprint, head bob, distance-synced
-  footsteps, collision against buildings, trees, temple bases and the riverbank, and `E` inspection
-  within 30 units. Walk state is preserved when switching modes.
+- **Walk** — drag-to-look with the mouse and WASD/arrow movement, sprint, head bob, scroll-wheel FOV
+  zoom, distance-synced footsteps, collision against buildings, trees, temple bases and the riverbank,
+  and `E` inspection within 30 units. Walk state is preserved when switching modes.
 - **Transit tour** — a centripetal Catmull-Rom route from the southern river through Rattanakosin and
   inland to Baiyoke. Five stops with distinct camera views and look targets, dwell timing, pause/resume,
-  next-stop jumps, replay, progress boat and stop nodes.
+  next-stop jumps, replay, progress boat and stop nodes. Scroll-wheel FOV zoom works here too.
 
 ### 3. Bilingual HUD, lighting and audio
 
@@ -99,10 +99,11 @@ package manager, API key or tracking.
 ## Verification
 
 - `node --check script.js` passes.
-- In-page self-test: **23 / 23**, including scene construction, five landmarks/markers/labels, five pick
+- In-page self-test: **24 / 24**, including scene construction, five landmarks/markers/labels, five pick
   volumes, EN/TH key parity, landmark bilingual parity, ordered tour stops, three presets, three camera
-  modes, walk colliders, traffic instances, river shader, local state round-trip, export schema and
-  filename, note sanitising, minimap, audio class, WebGL context, mode switching and language switching.
+  modes, drag-look + zoom controls, walk colliders, traffic instances, river shader, local state
+  round-trip, export schema and filename, note sanitising, minimap, audio class, WebGL context, mode
+  switching and language switching.
 - Headless Chrome 156 (ANGLE/SwiftShader) drove: boot and intro, all three modes, tour next/pause,
   marker raycast picking, drawer visited/route/note actions, Thai switch with the drawer open, all three
   lighting presets, JSON download to disk, JSON import from disk, localStorage reload, and a 430×900
@@ -113,9 +114,9 @@ package manager, API key or tracking.
 
 | File | Lines | Role |
 | --- | ---: | --- |
-| `index.html` | 266 | DOM, HUD, intro, guide drawer, CDN tags |
-| `style.css` | 1,375 | design system, glass UI, responsive/Thai typography |
-| `script.js` | 4,100 | world, landmarks, cameras, UI, audio, state, self-test |
+| `index.html` | 265 | DOM, HUD, intro, guide drawer, CDN tags |
+| `style.css` | 1,377 | design system, glass UI, responsive/Thai typography |
+| `script.js` | 4,168 | world, landmarks, cameras, UI, audio, state, self-test |
 | `screenshots/` | 10 | intro, day, golden, night, walk, river tour, tour stop, guide, Thai guide, mobile |
 | `README.md` | — | features, run, controls, architecture, credits |
 | `AGENTS.md` | — | handoff: commands, architecture, constraints, known issues |
@@ -131,17 +132,24 @@ package manager, API key or tracking.
   shaders, which write raw colour. Changing this changes the whole palette.
 - Landmark IDs, state schema and `bangkok_3d_tour.json` are public contracts; keep them stable.
 - Audio is gesture-gated by design; no autoplay.
-- Walk mode is keyboard/mouse and east-bank only.
+- Walk mode uses keyboard movement and mouse drag to look; the walkable area is the east bank.
 
 ## Credits
 
 Built with **[OpenCode](https://opencode.ai)** 2.2.5 and **DeepSeek V4.1 Flash**
 (`opencode-go/deepseek-v4.1-flash`). Graphics by [Three.js](https://threejs.org) r128 (MIT), with the
-r128 OrbitControls and PointerLockControls examples. Fonts: Chonburi, Kanit, Cormorant Garamond
+r128 OrbitControls example. Walk look is implemented in-house. Fonts: Chonburi, Kanit, Cormorant Garamond
 (Google Fonts, SIL OFL 1.1). All geometry, textures, audio and copy are original. See
 `THIRD_PARTY_NOTICES.md`.
 
+## Revisions after the original freeze
+
+- **Controls revision:** pointer lock was removed. Walk mode now uses normal drag-to-look, the cursor is
+  never captured, and scroll-wheel field-of-view zoom was added to Walk and Transit. The self-test
+  gained a 24th check. This supersedes the PointerLockControls wording in the original build snapshot
+  above.
+
 ## Post-freeze work
 
-The live Pages build was verified at the published timestamp above, including a 23/23 self-test. This
+The live Pages build was verified at the published timestamp above, including a 24/24 self-test. This
 state file is the build record; the deployed site is the source of truth for the finished artefact.

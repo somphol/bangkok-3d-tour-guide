@@ -71,8 +71,8 @@
       'map.title': 'River map',
       'map.label': 'Chao Phraya · Rattanakosin',
       'tour.next': 'Next',
-      'walk.click': 'Click to look around',
-      'walk.esc': 'Esc releases the mouse · WASD to walk',
+      'walk.click': 'Drag to look around',
+      'walk.esc': 'WASD to walk · scroll to zoom · E to inspect',
       'drawer.visit': 'Visitor notes',
       'drawer.notes': 'Your notes',
       'drawer.notesPh': 'What do you want to remember?',
@@ -107,7 +107,7 @@
       'help.eyebrow': 'Field guide',
       'help.title': 'How to explore',
       'help.modes': 'Modes',
-      'help.modesText': 'Drone orbits the skyline. Walk drops you onto the river promenade with mouse-look. Transit follows a spline along the river and stops at each landmark.',
+      'help.modesText': 'Drone orbits the skyline. Walk drops you onto the river promenade with drag-to-look and WASD. Transit follows a spline along the river and stops at each landmark.',
       'help.time': 'Light',
       'help.timeText': 'Midday, golden hour and neon night change the sky, sun, fog, water and every lit window.',
       'help.keys': 'Keys',
@@ -117,11 +117,11 @@
       'hint.droneKey': 'DRAG',
       'hint.drone': 'Orbit the city · scroll to zoom · right-drag to pan',
       'hint.walkKey': 'WASD',
-      'hint.walk': 'Walk · Shift to run · click to look · E to inspect · Esc to release',
+      'hint.walk': 'Drag to look · scroll to zoom · WASD walk · Shift run · E inspect',
       'hint.inspect': 'Inspect · {name}',
       'hint.openGuide': 'Click to open the guide',
       'hint.tourKey': 'TOUR',
-      'hint.tour': 'The boat is moving · Space pauses · N jumps to the next stop',
+      'hint.tour': 'The boat is moving · scroll to zoom · Space pauses · N jumps to the next stop',
       'tour.stop': 'Stop {n} / 5',
       'tour.enRoute': 'En route',
       'tour.complete': 'Tour complete',
@@ -177,8 +177,8 @@
       'map.title': 'แผนที่ริมน้ำ',
       'map.label': 'เจ้าพระยา · รัตนโกสินทร์',
       'tour.next': 'ถัดไป',
-      'walk.click': 'คลิกเพื่อหันมอง',
-      'walk.esc': 'กด Esc เพื่อปล่อยเมาส์ · WASD เพื่อเดิน',
+      'walk.click': 'ลากเพื่อหันมอง',
+      'walk.esc': 'WASD เพื่อเดิน · เลื่อนล้อเพื่อซูม · E เพื่อดูข้อมูล',
       'drawer.visit': 'ข้อมูลการเยี่ยมชม',
       'drawer.notes': 'บันทึกของคุณ',
       'drawer.notesPh': 'อยากจำอะไรไว้บ้าง?',
@@ -213,7 +213,7 @@
       'help.eyebrow': 'คู่มือภาคสนาม',
       'help.title': 'วิธีสำรวจเมือง',
       'help.modes': 'โหมดกล้อง',
-      'help.modesText': 'โหมดโดรนหมุนรอบเส้นขอบฟ้า โหมดเดินพาคุณลงสู่ทางเดินริมน้ำและใช้เมาส์หันมอง โหมดโดยสารเคลื่อนตามเส้นโค้งริมแม่น้ำและหยุดที่แลนด์มาร์กทุกแห่ง',
+      'help.modesText': 'โหมดโดรนหมุนรอบเส้นขอบฟ้า โหมดเดินพาคุณลงสู่ทางเดินริมน้ำ ลากเมาส์เพื่อหันมอง และใช้ WASD เดิน โหมดโดยสารเคลื่อนตามเส้นโค้งริมแม่น้ำและหยุดที่แลนด์มาร์กทุกแห่ง',
       'help.time': 'แสง',
       'help.timeText': 'กลางวัน แสงทอง และกลางคืนนีออน เปลี่ยนท้องฟ้า ดวงอาทิตย์ หมอก ผิวน้ำ และหน้าต่างที่สว่างทุกบาน',
       'help.keys': 'ปุ่มลัด',
@@ -223,11 +223,11 @@
       'hint.droneKey': 'ลาก',
       'hint.drone': 'หมุนชมเมือง · เลื่อนล้อเพื่อซูม · ลากขวาเพื่อเลื่อนภาพ',
       'hint.walkKey': 'WASD',
-      'hint.walk': 'เดิน · Shift เพื่อวิ่ง · คลิกเพื่อหันมอง · E เพื่อดูข้อมูล · Esc เพื่อปล่อยเมาส์',
+      'hint.walk': 'ลากเพื่อหันมอง · เลื่อนล้อเพื่อซูม · WASD เพื่อเดิน · Shift เพื่อวิ่ง · E เพื่อดูข้อมูล',
       'hint.inspect': 'ดูข้อมูล · {name}',
       'hint.openGuide': 'คลิกเพื่อเปิดคู่มือ',
       'hint.tourKey': 'ทัวร์',
-      'hint.tour': 'เรือกำลังเคลื่อน · Space หยุดชั่วคราว · N ไปจุดถัดไป',
+      'hint.tour': 'เรือกำลังเคลื่อน · เลื่อนล้อเพื่อซูม · Space หยุดชั่วคราว · N ไปจุดถัดไป',
       'tour.stop': 'จุดที่ {n} / 5',
       'tour.enRoute': 'กำลังเดินทาง',
       'tour.complete': 'ทัวร์เสร็จสิ้น',
@@ -639,7 +639,7 @@
      ========================================================================== */
 
   let THREE_OK = typeof window.THREE !== 'undefined';
-  let scene, camera, renderer, orbit, plc;
+  let scene, camera, renderer, orbit;
   let sun, hemi, ambient, skyMat, skyMesh, starField, sunSprite, moonSprite;
   let waterMat, waterMesh;
   let markerRoot, markerRecords = [], pickTargets = [], landmarkGroups = [];
@@ -2343,7 +2343,6 @@
   const droneHome = { pos: new THREE.Vector3(98, 110, 126), target: new THREE.Vector3(-4, 10, -10) };
   const droneCamPos = new THREE.Vector3().copy(droneHome.pos);
   const droneTarget = new THREE.Vector3().copy(droneHome.target);
-  let isLocked = false;
   let introVisible = true;
   let drawerOpen = false;
   let helpOpen = false;
@@ -2354,6 +2353,15 @@
   let bobT = 0;
   let stepAccum = 0;
   const keys = {};
+
+  // Normal drag-to-look walk controls (no pointer lock).
+  const walkLook = { active: false, pointerId: null, lastX: 0, lastY: 0, yaw: 0, pitch: 0, moved: 0 };
+  const walkEuler = new THREE.Euler(0, 0, 0, 'YXZ');
+  let walkHintDismissed = false;
+  let walkHintTimer = null;
+  let freeZoom = 1; // walk/tour field-of-view zoom; drone uses OrbitControls distance
+  const ZOOM_MIN = 0.6;
+  const ZOOM_MAX = 1.8;
 
   let tourCurve, tourStops = [], tourLook = new THREE.Vector3();
   const tourState = { u: 0, index: 0, dwell: 0, active: -1, playing: true, completed: false };
@@ -2372,17 +2380,48 @@
     orbit.enablePan = true;
     orbit.screenSpacePanning = false;
 
-    plc = new THREE.PointerLockControls(camera, renderer.domElement);
-    plc.addEventListener('lock', () => {
-      isLocked = true;
-      dom.walkHint.hidden = true;
-      dom.crosshair.hidden = false;
-    });
-    plc.addEventListener('unlock', () => {
-      isLocked = false;
-      dom.crosshair.hidden = true;
-      if (state.mode === 'walk' && !drawerOpen && !helpOpen) dom.walkHint.hidden = false;
-    });
+  }
+
+  function baseFov() {
+    return window.innerWidth / window.innerHeight < 0.85 ? 62 : 48;
+  }
+
+  function applyViewFov() {
+    if (!camera) return;
+    const zoom = state.mode === 'drone' ? 1 : freeZoom;
+    const next = clamp(baseFov() * zoom, 26, 86);
+    if (Math.abs(camera.fov - next) > 0.01) {
+      camera.fov = next;
+      camera.updateProjectionMatrix();
+    }
+  }
+
+  function dismissWalkHint() {
+    walkHintDismissed = true;
+    clearTimeout(walkHintTimer);
+    dom.walkHint.hidden = true;
+  }
+
+  function endWalkDrag(e) {
+    if (!walkLook.active) return;
+    const pointerId = e ? e.pointerId : walkLook.pointerId;
+    walkLook.active = false;
+    walkLook.pointerId = null;
+    dom.canvas.classList.remove('is-dragging');
+    if (pointerId != null && dom.canvas.releasePointerCapture) {
+      try { dom.canvas.releasePointerCapture(pointerId); } catch (err) { /* already released */ }
+    }
+  }
+
+  function onWheelZoom(e) {
+    if (introVisible || drawerOpen || helpOpen) return;
+    if (state.mode !== 'walk' && state.mode !== 'tour') return;
+    e.preventDefault();
+    const direction = Math.sign(e.deltaY);
+    if (!direction) return;
+    freeZoom = clamp(freeZoom * (direction > 0 ? 1.09 : 0.917), ZOOM_MIN, ZOOM_MAX);
+    applyViewFov();
+    dismissWalkHint();
   }
 
   function setMode(mode, opts) {
@@ -2391,7 +2430,6 @@
       updateModeUI();
       return;
     }
-    if (state.mode === 'walk' && isLocked) plc.unlock();
     if (state.mode === 'drone') {
       droneCamPos.copy(camera.position);
       droneTarget.copy(orbit.target);
@@ -2409,11 +2447,18 @@
       if (matchMedia('(pointer: coarse)').matches && !(opts && opts.silent)) {
         toast(t('toast.walkMobile'));
       }
+      walkHintDismissed = false;
+      clearTimeout(walkHintTimer);
+      walkHintTimer = setTimeout(() => {
+        walkHintDismissed = true;
+        updateModeUI();
+      }, 7000);
       dom.walkHint.hidden = false;
       dom.crosshair.hidden = true;
       dom.walkHint.style.display = '';
     } else {
-      if (isLocked) plc.unlock();
+      clearTimeout(walkHintTimer);
+      endWalkDrag();
       dom.walkHint.hidden = true;
       dom.crosshair.hidden = true;
       if (mode === 'drone') {
@@ -2429,6 +2474,7 @@
       }
     }
     updateModeUI();
+    applyViewFov();
     updateHint();
     updateDrawerButtons();
     if (!(opts && opts.silent)) {
@@ -2441,8 +2487,8 @@
     $$('.mode-btn').forEach((b) => b.classList.toggle('is-active', b.dataset.mode === state.mode));
     dom.tourBar.hidden = state.mode !== 'tour';
     dom.hintBar.hidden = state.mode === 'tour';
-    dom.walkHint.hidden = !(state.mode === 'walk' && !isLocked && !drawerOpen && !helpOpen);
-    dom.crosshair.hidden = !(state.mode === 'walk' && isLocked);
+    dom.walkHint.hidden = !(state.mode === 'walk' && !walkHintDismissed && !drawerOpen && !helpOpen);
+    dom.crosshair.hidden = true;
     document.body.classList.toggle('is-walking', state.mode === 'walk');
     document.body.classList.toggle('is-touring', state.mode === 'tour');
     updateHint();
@@ -3119,7 +3165,7 @@
       tourState.playing = false;
     }
     drawerOpen = true;
-    if (isLocked) plc.unlock();
+    endWalkDrag();
     renderDrawer(l, false);
     dom.drawer.classList.add('is-open');
     dom.drawer.setAttribute('aria-hidden', 'false');
@@ -3149,7 +3195,7 @@
     activeLandmark = null;
     updateLandmarkList();
     updateTrailFab();
-    if (state.mode === 'walk' && !isLocked) dom.walkHint.hidden = false;
+    if (state.mode === 'walk' && !walkHintDismissed) dom.walkHint.hidden = false;
     if (state.mode === 'tour') updateTourHud();
   }
 
@@ -3602,51 +3648,51 @@
     dom.tourPlayBtn.addEventListener('click', toggleTourPlay);
     dom.tourNextBtn.addEventListener('click', tourNext);
 
-    // Canvas picking
+    // Canvas look, picking, and zoom. Walk mode uses ordinary drag-to-look, never pointer lock.
     let down = null;
     dom.canvas.addEventListener('pointerdown', (e) => {
+      if (introVisible || drawerOpen || helpOpen) return;
+      if (e.pointerType === 'mouse' && e.button !== 0) return;
       down = { x: e.clientX, y: e.clientY };
+      if (state.mode === 'walk') {
+        const eul = walkEuler.setFromQuaternion(camera.quaternion, 'YXZ');
+        walkLook.yaw = eul.y;
+        walkLook.pitch = eul.x;
+        walkLook.active = true;
+        walkLook.pointerId = e.pointerId;
+        walkLook.lastX = e.clientX;
+        walkLook.lastY = e.clientY;
+        walkLook.moved = 0;
+        if (dom.canvas.setPointerCapture) {
+          try { dom.canvas.setPointerCapture(e.pointerId); } catch (err) { /* capture is optional */ }
+        }
+        dom.canvas.classList.add('is-dragging');
+        dismissWalkHint();
+      }
     });
     dom.canvas.addEventListener('pointerup', (e) => {
+      const dragMoved = walkLook.moved;
+      endWalkDrag(e);
       if (!down) return;
-      const moved = Math.hypot(e.clientX - down.x, e.clientY - down.y);
+      const moved = Math.max(Math.hypot(e.clientX - down.x, e.clientY - down.y), dragMoved);
       down = null;
       if (moved > 7) return;
-      if (state.mode === 'walk' && !isLocked) {
-        plc.lock();
-        return;
-      }
-      if (state.mode === 'walk' && isLocked) return;
       const hit = pickAt(e.clientX, e.clientY);
       if (hit) openLandmark(hit);
     });
+    dom.canvas.addEventListener('pointercancel', endWalkDrag);
     dom.canvas.addEventListener('pointermove', onPointerMove);
     dom.canvas.addEventListener('pointerleave', () => {
       setHovered(null);
       dom.tooltip.classList.remove('is-on');
     });
-
-    document.addEventListener('mousedown', (e) => {
-      if (state.mode === 'walk' && isLocked) {
-        const hit = pickAt(window.innerWidth / 2, window.innerHeight / 2);
-        if (hit) openLandmark(hit);
-      }
-      void e;
-    });
-
-    document.addEventListener('mousemove', (e) => {
-      if (state.mode !== 'walk' || !isLocked) return;
-      // pointer lock supplies movement; nothing to do here, kept for clarity
-      void e;
-    });
+    dom.canvas.addEventListener('wheel', onWheelZoom, { passive: false });
 
     window.addEventListener('keydown', onKeyDown);
     window.addEventListener('resize', onResize);
-    window.addEventListener('pointerlockerror', () => {
-      if (state.mode === 'walk') toast('Pointer lock is unavailable in this browser.');
-    });
     document.addEventListener('visibilitychange', () => {
       if (document.hidden) {
+        endWalkDrag();
         cityAudio.setEnabled(false);
         if (state.mode === 'tour') tourState.playing = false;
       } else {
@@ -3671,7 +3717,22 @@
 
   function onPointerMove(e) {
     if (introVisible || drawerOpen || helpOpen) return;
-    if (state.mode === 'walk' && isLocked) return;
+    if (state.mode === 'walk' && walkLook.active) {
+      const dx = e.clientX - walkLook.lastX;
+      const dy = e.clientY - walkLook.lastY;
+      if (dx || dy) {
+        const sensitivity = 0.0026 * (camera.fov / baseFov());
+        walkLook.yaw -= dx * sensitivity;
+        walkLook.pitch = clamp(walkLook.pitch - dy * sensitivity, -1.45, 1.45);
+        walkEuler.set(walkLook.pitch, walkLook.yaw, 0, 'YXZ');
+        camera.quaternion.setFromEuler(walkEuler);
+        walkLook.moved += Math.hypot(dx, dy);
+        dismissWalkHint();
+      }
+      walkLook.lastX = e.clientX;
+      walkLook.lastY = e.clientY;
+      return;
+    }
     const hit = pickAt(e.clientX, e.clientY);
     setHovered(hit);
     if (hit) {
@@ -3708,7 +3769,6 @@
     if (e.code === 'Escape') {
       if (helpOpen) { closeHelp(); return; }
       if (drawerOpen) { closeDrawer(); return; }
-      if (state.mode === 'walk' && isLocked) { plc.unlock(); return; }
       return;
     }
     if (drawerOpen || helpOpen) return;
@@ -3759,13 +3819,14 @@
   });
   window.addEventListener('blur', () => {
     Object.keys(keys).forEach((k) => { keys[k] = false; });
+    endWalkDrag();
   });
 
   function onResize() {
     if (!renderer || !camera) return;
     const aspect = window.innerWidth / window.innerHeight;
     camera.aspect = aspect;
-    camera.fov = aspect < 0.85 ? 62 : 48;
+    applyViewFov();
     camera.updateProjectionMatrix();
     renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
     renderer.setSize(window.innerWidth, window.innerHeight);
@@ -3898,8 +3959,7 @@
       orbit.target.copy(droneHome.target);
       droneCamPos.copy(droneHome.pos);
       droneTarget.copy(droneHome.target);
-      camera.fov = 62;
-      camera.updateProjectionMatrix();
+      applyViewFov();
     }
     buildLandmarkList();
     buildLabels();
@@ -4006,6 +4066,13 @@
         started: cityAudio.started,
         context: cityAudio.ctx ? cityAudio.ctx.state : null,
         footsteps: typeof cityAudio.footstep === 'function'
+      }),
+      getControls: () => ({
+        mode: state.mode,
+        fov: +camera.fov.toFixed(2),
+        zoom: +freeZoom.toFixed(3),
+        dragging: walkLook.active,
+        pointerLock: false
       })
     };
 
@@ -4043,7 +4110,8 @@
     check('tour has five ordered stops', () => tourStops.length === 5 &&
       tourStops.every((s, i) => i === 0 || s.u > tourStops[i - 1].u) && tourStops[4].u <= 1);
     check('three lighting presets', () => Object.keys(PRESETS).length === 3);
-    check('three camera modes', () => ['drone', 'walk', 'tour'].every((m) => typeof m === 'string') && !!orbit && !!plc);
+    check('three camera modes', () => ['drone', 'walk', 'tour'].every((m) => typeof m === 'string') && !!orbit && !!walkLook);
+    check('walk drag-look and zoom', () => typeof applyViewFov === 'function' && typeof onWheelZoom === 'function' && ZOOM_MIN < ZOOM_MAX);
     check('walk collision field', () => colliders.length > 60);
     check('traffic instances', () => !!carMesh && carMesh.count > 50);
     check('river shader', () => !!waterMat && waterMat.uniforms.uTime.value >= 0);

@@ -5,8 +5,8 @@ following are loaded at runtime from public CDNs or referenced as data.
 
 ## Three.js r128
 
-- Files: `three.min.js` (cdnjs), `examples/js/controls/OrbitControls.js` and
-  `examples/js/controls/PointerLockControls.js` (jsDelivr, `three@0.128.0`).
+- Files: `three.min.js` (cdnjs) and `examples/js/controls/OrbitControls.js`
+  (jsDelivr, `three@0.128.0`). Walk look is implemented in this project without PointerLockControls.
 - Licence: MIT.
 - Copyright © 2010–2021 three.js authors.
 - <https://github.com/mrdoob/three.js>

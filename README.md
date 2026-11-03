@@ -29,9 +29,10 @@ visited, added to a custom route, and annotated with private notes.
 
 - **Drone city flyover** — OrbitControls: drag to rotate, wheel to zoom, right-drag to pan. A cinematic
   orbit plays behind the title screen. Each landmark has a “Fly here” camera move.
-- **First-person street walk** — click the scene to capture the mouse, then WASD / arrows to walk,
-  Shift to run, mouse to look, `E` to inspect the nearest landmark, `Esc` to release. Movement is
-  blocked by buildings, trees, temple bases and the riverbank. Footsteps follow walking speed.
+- **First-person street walk** — drag anywhere on the scene to look around, then WASD / arrows to
+  walk, Shift to run, scroll to zoom, `E` to inspect the nearest landmark. There is no pointer lock:
+  the cursor stays yours. Movement is blocked by buildings, trees, temple bases and the riverbank.
+  Footsteps follow walking speed.
 - **Automated transit tour** — a Catmull-Rom river-and-city route with five dwell stops. Pause with
   `Space`, jump with `N` or the Next button; the tour resumes where you left it.
 
@@ -80,11 +81,11 @@ node --check script.js
 open 'http://127.0.0.1:8000/?selftest=1'
 ```
 
-The self-test runs 23 checks in the page: scene construction, five landmarks/markers/labels, bilingual
+The self-test runs 24 checks in the page: scene construction, five landmarks/markers/labels, bilingual
 key parity, tour stop ordering, lighting presets, walk colliders, traffic instances, the water shader,
 state round-tripping, export schema/filename, note sanitising, minimap, audio class, WebGL context,
 mode switching and language switching. It displays the pass count on screen and in the console.
-Current result: **23 / 23**.
+Current result: **24 / 24**.
 
 ### Debug URL parameters
 
@@ -107,7 +108,8 @@ Current result: **23 / 23**.
 | Drag, wheel, right-drag | Orbit, zoom, pan (drone) |
 | `WASD` / arrows | Walk |
 | `Shift` | Run |
-| Mouse (after click) | Look |
+| Drag on the scene | Look around |
+| Scroll | Zoom (walk/tour field of view) |
 | `E` | Inspect nearest landmark (walk) |
 | `Space` | Pause / resume the tour |
 | `N` | Next tour stop |
@@ -116,7 +118,7 @@ Current result: **23 / 23**.
 | `M` | Sound on/off |
 | `H` or `?` | Help |
 | `R` | Recenter the drone |
-| `Esc` | Close drawer / help / release pointer lock |
+| `Esc` | Close drawer / help |
 
 ![Street walk](screenshots/05-walk.jpg)
 ![Wat Pho under its open canopy](screenshots/07-tour-stop.jpg)
@@ -146,7 +148,7 @@ STATE.md               human-readable build record
 4. **Procedural city** — river, embankments, promenade, roads, bridges, blocks, parcels, parks, trees,
    traffic, boats, lamps, railings.
 5. **Landmarks** — five hand-built groups, markers, pick volumes and plaza rings.
-6. **Camera** — OrbitControls, PointerLockControls, collision-aware walking, spline tour state machine.
+6. **Camera** — OrbitControls, drag-to-look walking with collision, spline tour state machine.
 7. **UI** — bilingual HUD, drawer, minimap, audio synthesis, narration, export/import.
 8. **Boot / self-test / debug API** (`window.Bangkok3D`).
 
@@ -165,14 +167,13 @@ north–south near `x = -26`. Geography is compressed and interpretive.
 - **Headless verification** runs under SwiftShader at a few frames per second; the scene is built for
   a hardware-accelerated browser.
 - Three.js r128 is pinned in `index.html`; changing the version requires re-checking the non-module
-  `OrbitControls` / `PointerLockControls` examples.
+  `OrbitControls` example.
 
 ## Credits
 
 - Built with **[OpenCode](https://opencode.ai)** (2.2.5) and **DeepSeek V4.1 Flash**
   (`opencode-go/deepseek-v4.1-flash`).
-- [Three.js](https://threejs.org) r128, MIT — plus the r128 OrbitControls and PointerLockControls
-  examples.
+- [Three.js](https://threejs.org) r128, MIT — plus the r128 OrbitControls example.
 - Fonts served by Google Fonts: **Chonburi**, **Kanit** (Cadson Demak) and **Cormorant Garamond**
   (Christian Thalmann), under the SIL Open Font License 1.1.
 - All geometry, textures, audio and copy in this repository are original; no photographs or map tiles

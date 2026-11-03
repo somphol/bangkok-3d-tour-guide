@@ -4,7 +4,7 @@
 
 A static, single-page interactive miniature of Bangkok built with vanilla HTML/CSS/ES6 and Three.js
 r128 from CDN. It renders a compressed Rattanakosin city with five procedural landmarks, offers three
-camera modes (orbit drone, pointer-lock walk, automated spline tour), bilingual EN/TH copy, three
+camera modes (orbit drone, drag-to-look walk, automated spline tour), bilingual EN/TH copy, three
 lighting presets, synthesised Web Audio ambience and local JSON itinerary export/import. It is a
 tourist-guide toy, not a map, GIS product or live travel-data service. See [README.md](README.md) for
 the feature tour.
@@ -19,7 +19,7 @@ open http://127.0.0.1:8000/
 # syntax check
 node --check script.js
 
-# in-browser self-test (23 checks)
+# in-browser self-test (24 checks)
 open 'http://127.0.0.1:8000/?selftest=1'
 
 # screenshots / debug: add reset + autostart + optional mode/preset/lang/drawer
@@ -32,8 +32,8 @@ bundler, test runner or environment variable.
 ## Architecture
 
 - `index.html` — all DOM: header, mode/time/sound controls, trail panel, minimap, tour bar, drawer,
-  intro, help, loading, self-test container. The three CDN script tags are pinned (Three r128,
-  OrbitControls r128, PointerLockControls r128) and load in that order.
+  intro, help, loading, self-test container. The two CDN script tags are pinned (Three r128 and
+  OrbitControls r128) and load in that order. Walk look is implemented in-house with pointer drag.
 - `style.css` — design tokens, glass panels, responsive breakpoints (1240 / 980 / 860 / 620 px),
   Thai-capable typography (Chonburi, Kanit, Cormorant Garamond), reduced-motion support.
 - `script.js` — one IIFE with eight numbered sections. Boot order is: reset param → renderer/materials
@@ -71,13 +71,16 @@ dataset, UI, export schema and self-test.
   return.
 - **Audio is gesture-gated.** Never autoplay; synthesis only starts after “Enter the city” or the sound
   toggle. `setEnabled(false)` ramps the master gain and is safe to call repeatedly.
+- **Walk look is drag-based, deliberately not pointer lock.** Do not reintroduce PointerLockControls;
+  dragging the canvas updates `walkLook` yaw/pitch and the walk hint auto-dismisses. Scroll zoom in
+  walk/tour changes the field of view (`freeZoom`, 0.6–1.8); the drone uses OrbitControls distance.
 - **Screenshots are 1600 px JPEGs**, mobile at 430 px, captured through headless Chrome CDP. Do not
   commit raw PNG captures; keep the repository lean.
 
 ## Known issues
 
-- Walk mode requires a keyboard and mouse; touch devices get a toast and should use drone/tour. The
-  walk boundary is the east bank; there is no bridge collision or west-bank walking.
+- Walk mode requires a keyboard; mouse drag is used to look. Touch devices get a toast and should use
+  drone/tour. The walk boundary is the east bank; there is no bridge collision or west-bank walking.
 - The tourist fees and opening hours are a 2026 snapshot and are not fetched live.
 - Speech narration depends on installed OS voices; Thai may fall back to an English voice on some
   systems.

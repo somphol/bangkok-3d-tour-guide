@@ -143,8 +143,8 @@
   </div>
 
   <div class="walk-hint glass" id="walkHint" hidden>
-    <strong data-i18n="walk.click">Click to look around</strong>
-    <span data-i18n="walk.esc">Esc releases the mouse · WASD to walk</span>
+    <strong data-i18n="walk.click">Drag to look around</strong>
+    <span data-i18n="walk.esc">WASD to walk · scroll to zoom · E to inspect</span>
   </div>
   <div class="crosshair" id="crosshair" hidden></div>
 
@@ -239,7 +239,7 @@
       <p class="eyebrow" data-i18n="help.eyebrow">Field guide</p>
       <h2 id="helpTitle" data-i18n="help.title">How to explore</h2>
       <div class="help-grid">
-        <div><h3 data-i18n="help.modes">Modes</h3><p data-i18n="help.modesText">Drone orbits the skyline. Walk drops you onto the river promenade with mouse-look. Transit follows a spline along the river and stops at each landmark.</p></div>
+        <div><h3 data-i18n="help.modes">Modes</h3><p data-i18n="help.modesText">Drone orbits the skyline. Walk drops you onto the river promenade with drag-to-look and WASD. Transit follows a spline along the river and stops at each landmark.</p></div>
         <div><h3 data-i18n="help.time">Light</h3><p data-i18n="help.timeText">Midday, golden hour and neon night change the sky, sun, fog, water and every lit window.</p></div>
         <div><h3 data-i18n="help.keys">Keys</h3><p><kbd>1</kbd><kbd>2</kbd><kbd>3</kbd> modes · <kbd>WASD</kbd> walk · <kbd>Shift</kbd> run · <kbd>E</kbd> inspect · <kbd>Space</kbd> pause tour · <kbd>N</kbd> next stop · <kbd>L</kbd> language · <kbd>T</kbd> time · <kbd>M</kbd> sound · <kbd>H</kbd> help</p></div>
         <div><h3 data-i18n="help.save">Saving</h3><p data-i18n="help.saveText">Visited stamps, notes and your route live in localStorage. Save Route downloads a portable JSON file; Load Route restores it on another device.</p></div>
@@ -260,7 +260,6 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/PointerLockControls.js"></script>
 <script src="script.js"></script>
 </body>
 </html>
