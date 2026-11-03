@@ -20,14 +20,14 @@
     "publishedDurationHuman": "1h 5m 29s"
   },
   "tokens": {
-    "input": 621231,
-    "output": 162988,
-    "reasoning": 169518,
-    "cacheRead": 85821696,
+    "input": 672144,
+    "output": 192637,
+    "reasoning": 180832,
+    "cacheRead": 107218304,
     "cacheWrite": 1230,
-    "total": 953737,
-    "totalWithCache": 86776663,
-    "note": "Snapshot from the OpenCode session record at 2026-11-03T04:05:57Z, after the post-publish drag-look/zoom revision and its local verification. total = input + output + reasoning. Cache reads/writes are context-usage figures and are reported separately; the final commit, Pages rebuild and closing response add a small amount more.",
+    "total": 1045613,
+    "totalWithCache": 108265147,
+    "note": "Snapshot from the OpenCode session record at 2026-11-03T04:17:38Z, after the documentation release and its local checks. total = input + output + reasoning. Cache reads/writes are context-usage figures and are reported separately; the final commit, Pages rebuild and closing response add a small amount more.",
     "cost": 0.0
   },
   "cost": {
@@ -100,7 +100,8 @@
       "JSON download with the required filename",
       "JSON import from disk",
       "mobile 430\u00d7900 layout",
-      "self-test 24/24 with zero runtime errors"
+      "self-test 24/24 with zero runtime errors",
+      "static release check 18/18"
     ]
   },
   "files": {
@@ -108,7 +109,9 @@
     "style.css": 1377,
     "script.js": 4168,
     "screenshots": 10,
-    "totalRepositoryBytesApprox": 3200000
+    "totalRepositoryBytesApprox": 3200000,
+    "docs": 11,
+    "rootPolicies": 9
   },
   "credits": {
     "builtWith": "OpenCode",
@@ -128,6 +131,12 @@
     {
       "at": "2026-11-03T04:05:57Z",
       "summary": "Post-publish controls revision: removed pointer-lock mouse capture; walk mode now uses ordinary drag-to-look with scroll-wheel field-of-view zoom. Tour also supports scroll-wheel zoom. Self-test grew from 23 to 24 checks (drag-look + zoom)."
+    },
+    {
+      "at": "2026-11-03T04:17:38Z",
+      "summary": "Documentation release: added changelog, contribution/security/support policies, architecture, controls, data-format, testing, deployment, accessibility, performance, FAQ, roadmap and release-checklist docs; added GitHub issue/PR templates and a static CI check. App version moved to 1.1.0."
     }
-  ]
+  ],
+  "projectVersion": "1.1.0",
+  "version": "1.1.0"
 }

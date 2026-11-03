@@ -3,6 +3,7 @@
 | Field | Value |
 | --- | --- |
 | Project | Bangkok 3D — Interactive Urban Tourist Guide & Explorer Studio (`bangkok-3d-tour-guide`) |
+| Version | **1.1.0** |
 | Session started | 2026-11-03 02:46:41 UTC |
 | Build started | 2026-11-03 02:48:24 UTC |
 | Source frozen | 2026-11-03 03:49:43 UTC |
@@ -21,18 +22,18 @@
 
 | Metric | Tokens |
 | --- | ---: |
-| Input | 621,231 |
-| Output | 162,988 |
-| Reasoning | 169,518 |
-| **Total (input + output + reasoning)** | **953,737** |
-| Cache read | 85,821,696 |
+| Input | 672,144 |
+| Output | 192,637 |
+| Reasoning | 180,832 |
+| **Total (input + output + reasoning)** | **1,045,613** |
+| Cache read | 107,218,304 |
 | Cache write | 1,230 |
-| Total including cache | 86,776,663 |
+| Total including cache | 108,265,147 |
 
-> Snapshot from the OpenCode session record at 2026-11-03T04:05:57Z, after the post-publish
-> drag-look/zoom revision and its local verification. Total cost reported by the session: **$0.00**.
-> The final commit, Pages rebuild and closing response add a small amount more. Cache reads/writes are
-> context-usage figures and are reported separately from the input/output/reasoning total.
+> Snapshot from the OpenCode session record at 2026-11-03T04:17:38Z, after the documentation
+> release and its local checks. Total cost reported by the session: **$0.00**. The final commit, Pages
+> rebuild and closing response add a small amount more. Cache reads/writes are context-usage figures and
+> are reported separately from the input/output/reasoning total.
 
 ## What was built
 
@@ -118,6 +119,8 @@ package manager, API key or tracking.
 | `style.css` | 1,377 | design system, glass UI, responsive/Thai typography |
 | `script.js` | 4,168 | world, landmarks, cameras, UI, audio, state, self-test |
 | `screenshots/` | 10 | intro, day, golden, night, walk, river tour, tour stop, guide, Thai guide, mobile |
+| `docs/` | 11 | controls, architecture, data, testing, deployment, release, accessibility, performance, FAQ, roadmap, index |
+| Root policies | 9 | changelog, contributing, conduct, security, support, authors, licence, notices, state |
 | `README.md` | — | features, run, controls, architecture, credits |
 | `AGENTS.md` | — | handoff: commands, architecture, constraints, known issues |
 | `LICENSE` | — | MIT |
@@ -143,6 +146,9 @@ r128 OrbitControls example. Walk look is implemented in-house. Fonts: Chonburi, 
 `THIRD_PARTY_NOTICES.md`.
 
 ## Revisions after the original freeze
+
+- **Documentation release:** version 1.1.0 adds the release documentation set, GitHub templates, a
+  static CI check and a changelog. The behaviour is unchanged after the drag-look/zoom revision above.
 
 - **Controls revision:** pointer lock was removed. Walk mode now uses normal drag-to-look, the cursor is
   never captured, and scroll-wheel field-of-view zoom was added to Walk and Transit. The self-test

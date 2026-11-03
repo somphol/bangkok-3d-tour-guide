@@ -1,5 +1,7 @@
 # AGENTS.md — Bangkok 3D
 
+**Current release:** 1.1.0 · **Docs index:** [docs/README.md](docs/README.md)
+
 ## What it is
 
 A static, single-page interactive miniature of Bangkok built with vanilla HTML/CSS/ES6 and Three.js
@@ -16,8 +18,9 @@ the feature tour.
 python3 -m http.server 8000
 open http://127.0.0.1:8000/
 
-# syntax check
+# syntax check + release skeleton
 node --check script.js
+node scripts/verify-static.mjs
 
 # in-browser self-test (24 checks)
 open 'http://127.0.0.1:8000/?selftest=1'
@@ -28,6 +31,14 @@ open 'http://127.0.0.1:8000/?reset=1&autostart=1&preset=night'
 
 Deployment is GitHub Pages from `main` / repository root (`.nojekyll` included). There is no npm,
 bundler, test runner or environment variable.
+
+## Documentation
+
+- [README](README.md) — quick tour and links.
+- [docs/README.md](docs/README.md) — controls, architecture, data format, testing, deployment, release
+  checklist, accessibility, performance, FAQ and roadmap.
+- Root policies: [CONTRIBUTING](CONTRIBUTING.md), [CODE_OF_CONDUCT](CODE_OF_CONDUCT.md),
+  [SECURITY](SECURITY.md), [SUPPORT](SUPPORT.md), [CHANGELOG](CHANGELOG.md), [AUTHORS](AUTHORS.md).
 
 ## Architecture
 

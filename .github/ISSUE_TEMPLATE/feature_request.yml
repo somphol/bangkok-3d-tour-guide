@@ -1,0 +1,58 @@
+name: Feature request
+description: Suggest a focused improvement to the guide or its engineering.
+title: "[Feature]: "
+labels: ["enhancement", "needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        The project is a static, no-build Three.js experience with hard constraints on geography and bilingual parity. Read docs/ROADMAP.md and docs/ARCHITECTURE.md before proposing a large change.
+  - type: textarea
+    id: problem
+    attributes:
+      label: What problem would this solve?
+      description: Describe the user and the situation, not only the widget.
+      placeholder: On a phone, walk mode looks draggable but cannot move; users get stuck.
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed solution
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - Controls and navigation
+        - Landmarks and city geometry
+        - Bilingual copy and guide content
+        - Audio
+        - Lighting and visuals
+        - Persistence and export
+        - Accessibility
+        - Performance
+        - Documentation and release
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: extra
+    attributes:
+      label: Mockups, references or extra context
+      description: Links and images are welcome. Do not include private data.
+  - type: checkboxes
+    id: constraints
+    attributes:
+      label: Fit with the project
+      options:
+        - label: This can work without a build step or new runtime dependency.
+          required: false
+        - label: I understand landmark IDs, state schema and bilingual parity are compatibility constraints.
+          required: true

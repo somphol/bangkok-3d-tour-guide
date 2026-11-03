@@ -1,5 +1,10 @@
 # Bangkok 3D — Interactive Urban Tourist Guide & Explorer Studio
 
+[![Live demo](https://img.shields.io/badge/live-demo-e7c27d)](https://somphol.github.io/bangkok-3d-tour-guide/)
+[![Release](https://img.shields.io/badge/release-v1.1.0-6cbcac)](CHANGELOG.md)
+[![License: MIT](https://img.shields.io/badge/license-MIT-brightgreen)](LICENSE)
+[![No build](https://img.shields.io/badge/build-none-lightgrey)](docs/ARCHITECTURE.md)
+
 An interactive miniature of Bangkok in a single browser experience: fly over the Chao Phraya, walk the
 Rattanakosin riverfront in first person, or let an automated river tour carry you between five
 landmarks. Everything is bilingual (English / ไทย), lit by three time-of-day presets, and scored with
@@ -136,8 +141,11 @@ index.html             DOM, HUD, intro, guide drawer, pinned CDN script tags
 style.css              design system, glass panels, responsive layout, Thai typography
 script.js              one ES6 IIFE, eight labelled sections, no build step
 screenshots/           final renders (1600 px JPEG; mobile at 430 px)
+docs/                  controls, architecture, data, testing, deployment, accessibility, FAQ
+.github/               issue/PR templates and the static CI check
 state.json             build/token/model record for this session
 STATE.md               human-readable build record
+CHANGELOG.md           release history (Keep a Changelog / SemVer)
 ```
 
 ### How `script.js` is assembled
@@ -168,6 +176,21 @@ north–south near `x = -26`. Geography is compressed and interpretive.
   a hardware-accelerated browser.
 - Three.js r128 is pinned in `index.html`; changing the version requires re-checking the non-module
   `OrbitControls` example.
+
+## Documentation
+
+- [Documentation index](docs/README.md)
+- [Controls](docs/CONTROLS.md) · [Architecture](docs/ARCHITECTURE.md) · [Data format](docs/DATA_FORMAT.md)
+- [Testing](docs/TESTING.md) · [Deployment](docs/DEPLOYMENT.md) · [Release checklist](docs/RELEASE_CHECKLIST.md)
+- [Accessibility](docs/ACCESSIBILITY.md) · [Performance](docs/PERFORMANCE.md) · [FAQ](docs/FAQ.md) · [Roadmap](docs/ROADMAP.md)
+- [Contributing](CONTRIBUTING.md) · [Code of Conduct](CODE_OF_CONDUCT.md) · [Security](SECURITY.md) · [Support](SUPPORT.md)
+- [Changelog](CHANGELOG.md) · [Authors](AUTHORS.md) · [Confidentiality and third-party notices](THIRD_PARTY_NOTICES.md)
+
+## Status
+
+Version **1.1.0**. The latest release adds normal drag-to-look walking, scroll-wheel zoom and the
+documentation set above. Runtime dependencies are pinned CDN files; there is no package manager and
+no build artifact. The deployed copy and the repository are the same static source.
 
 ## Credits
 

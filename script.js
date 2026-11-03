@@ -18,7 +18,7 @@
 
   const APP = {
     name: 'Bangkok 3D — Interactive Urban Tourist Guide & Explorer Studio',
-    version: '1.0.0',
+    version: '1.1.0',
     city: 'Bangkok',
     storageKey: 'bangkok3d.state.v1',
     exportName: 'bangkok_3d_tour.json',

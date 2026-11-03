@@ -1,0 +1,14 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Live demo and self-test
+    url: https://somphol.github.io/bangkok-3d-tour-guide/?selftest=1
+    about: Reproduce the problem on the live build and include the self-test result.
+  - name: Support and troubleshooting
+    url: https://github.com/somphol/bangkok-3d-tour-guide/blob/main/SUPPORT.md
+    about: Read the quick troubleshooting steps before opening a bug.
+  - name: Security report
+    url: https://github.com/somphol/bangkok-3d-tour-guide/security/policy
+    about: Please do not disclose vulnerabilities in a public issue.
+  - name: Documentation map
+    url: https://github.com/somphol/bangkok-3d-tour-guide/blob/main/docs/README.md
+    about: Controls, architecture, data format, testing, deployment and FAQ.
