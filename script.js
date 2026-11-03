@@ -18,7 +18,7 @@
 
   const APP = {
     name: 'Bangkok 3D — Interactive Urban Tourist Guide & Explorer Studio',
-    version: '1.1.0',
+    version: '1.1.1',
     city: 'Bangkok',
     storageKey: 'bangkok3d.state.v1',
     exportName: 'bangkok_3d_tour.json',
@@ -3722,7 +3722,8 @@
       const dy = e.clientY - walkLook.lastY;
       if (dx || dy) {
         const sensitivity = 0.0026 * (camera.fov / baseFov());
-        walkLook.yaw -= dx * sensitivity;
+        // Grab-the-landscape horizontal drag: drag left to bring the right side into view.
+        walkLook.yaw += dx * sensitivity;
         walkLook.pitch = clamp(walkLook.pitch - dy * sensitivity, -1.45, 1.45);
         walkEuler.set(walkLook.pitch, walkLook.yaw, 0, 'YXZ');
         camera.quaternion.setFromEuler(walkEuler);

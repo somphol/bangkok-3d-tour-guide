@@ -4,6 +4,20 @@ All notable changes to **Bangkok 3D — Interactive Urban Tourist Guide & Explor
 documented here. The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and the
 project uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.1.1] — 2026-11-03
+
+### Fixed
+
+- Inverted the horizontal walk drag direction to match the landscape-grab model: dragging left now
+  brings the right side of the scene into view, and dragging right brings the left side into view.
+  Vertical look and all zoom behaviour are unchanged.
+
+### Changed
+
+- Patch version metadata to `1.1.1`.
+
+[1.1.1]: https://github.com/somphol/bangkok-3d-tour-guide/compare/v1.1.0...v1.1.1
+
 ## [1.1.0] — 2026-11-03
 
 ### Added

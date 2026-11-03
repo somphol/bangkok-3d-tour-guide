@@ -1,7 +1,7 @@
 # Bangkok 3D — Interactive Urban Tourist Guide & Explorer Studio
 
 [![Live demo](https://img.shields.io/badge/live-demo-e7c27d)](https://somphol.github.io/bangkok-3d-tour-guide/)
-[![Release](https://img.shields.io/badge/release-v1.1.0-6cbcac)](CHANGELOG.md)
+[![Release](https://img.shields.io/badge/release-v1.1.1-6cbcac)](CHANGELOG.md)
 [![License: MIT](https://img.shields.io/badge/license-MIT-brightgreen)](LICENSE)
 [![No build](https://img.shields.io/badge/build-none-lightgrey)](docs/ARCHITECTURE.md)
 

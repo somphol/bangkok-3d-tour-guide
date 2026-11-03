@@ -48,7 +48,9 @@ drag, and auto-hides after seven seconds.
 
 ### Drag feel
 
-- Drag right to look right and drag down to look down.
+- Horizontal drag follows a **grab-the-landscape** model: drag left to bring the right side into view,
+  drag right to bring the left side into view.
+- Drag down to look down and drag up to look up.
 - Pitch is clamped to about ±83° so the camera cannot flip over.
 - Sensitivity scales with the current zoom, so a zoomed-in view is easier to aim.
 - Releasing the mouse, switching mode, opening the guide, losing focus or hiding the tab ends the drag

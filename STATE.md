@@ -3,7 +3,7 @@
 | Field | Value |
 | --- | --- |
 | Project | Bangkok 3D — Interactive Urban Tourist Guide & Explorer Studio (`bangkok-3d-tour-guide`) |
-| Version | **1.1.0** |
+| Version | **1.1.1** |
 | Session started | 2026-11-03 02:46:41 UTC |
 | Build started | 2026-11-03 02:48:24 UTC |
 | Source frozen | 2026-11-03 03:49:43 UTC |
@@ -16,25 +16,25 @@
 | Session | `ses_e60b2c542ffezeHzunC0PwPEEY` |
 | Repository | <https://github.com/somphol/bangkok-3d-tour-guide> |
 | Live demo | <https://somphol.github.io/bangkok-3d-tour-guide/> |
-| Release | [v1.1.0](https://github.com/somphol/bangkok-3d-tour-guide/releases/tag/v1.1.0) · previous [v1.0.0](https://github.com/somphol/bangkok-3d-tour-guide/releases/tag/v1.0.0) |
+| Release | [v1.1.1](https://github.com/somphol/bangkok-3d-tour-guide/releases/tag/v1.1.1) · previous [v1.1.0](https://github.com/somphol/bangkok-3d-tour-guide/releases/tag/v1.1.0) |
 | Self-test | **24 / 24 PASS** (local and live, zero runtime errors) |
 
 ## Token usage
 
 | Metric | Tokens |
 | --- | ---: |
-| Input | 681,467 |
-| Output | 196,429 |
-| Reasoning | 185,290 |
-| **Total (input + output + reasoning)** | **1,063,186** |
-| Cache read | 112,059,136 |
+| Input | 693,099 |
+| Output | 201,320 |
+| Reasoning | 188,464 |
+| **Total (input + output + reasoning)** | **1,082,883** |
+| Cache read | 116,010,624 |
 | Cache write | 1,230 |
-| Total including cache | 113,123,552 |
+| Total including cache | 117,094,737 |
 
-> Snapshot from the OpenCode session record at 2026-11-03T04:20:29Z, after the documentation
-> release and its local checks. Total cost reported by the session: **$0.00**. The final commit, Pages
-> rebuild and closing response add a small amount more. Cache reads/writes are context-usage figures and
-> are reported separately from the input/output/reasoning total.
+> Snapshot from the OpenCode session record at 2026-11-03T04:38:19Z, after the 1.1.1 drag-direction patch and
+> local verification. Total cost reported by the session: **$0.00**. The final commit, Pages rebuild
+> and closing response add a small amount more. Cache reads/writes are context-usage figures and are
+> reported separately from the input/output/reasoning total.
 
 ## What was built
 
@@ -155,6 +155,8 @@ r128 OrbitControls example. Walk look is implemented in-house. Fonts: Chonburi, 
   never captured, and scroll-wheel field-of-view zoom was added to Walk and Transit. The self-test
   gained a 24th check. This supersedes the PointerLockControls wording in the original build snapshot
   above.
+- **Patch 1.1.1:** horizontal walk drag is inverted to a grab-the-landscape feel; drag left brings the
+  right side of the scene into view. Vertical look and zoom are unchanged.
 
 ## Post-freeze work
 
