@@ -25,8 +25,8 @@ The roadmap is intentionally small and honest. Items are not commitments or date
 
 ## Later
 
-- Additional Bangkok landmarks (Wat Saket is already modelled; Wat Benchamabophit, Chinatown gate,
-  ICONSIAM or the Memorial Bridge are candidates) with a route that still fits one readable scene.
+- Additional Bangkok landmarks (Wat Benchamabophit, the Chinatown gate, ICONSIAM or the Memorial
+  Bridge are candidates) with a route that still fits one readable scene.
 - A second city using the same engine, with a documented city-data interface.
 - WebXR/viewer mode for headsets, if it can be done without breaking the no-build constraint.
 - Optional PWA shell with a deliberate cache-versioning strategy.

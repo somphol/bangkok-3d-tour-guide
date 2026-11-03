@@ -16,21 +16,22 @@
 | Session | `ses_e60b2c542ffezeHzunC0PwPEEY` |
 | Repository | <https://github.com/somphol/bangkok-3d-tour-guide> |
 | Live demo | <https://somphol.github.io/bangkok-3d-tour-guide/> |
+| Release | [v1.1.0](https://github.com/somphol/bangkok-3d-tour-guide/releases/tag/v1.1.0) · previous [v1.0.0](https://github.com/somphol/bangkok-3d-tour-guide/releases/tag/v1.0.0) |
 | Self-test | **24 / 24 PASS** (local and live, zero runtime errors) |
 
 ## Token usage
 
 | Metric | Tokens |
 | --- | ---: |
-| Input | 672,144 |
-| Output | 192,637 |
-| Reasoning | 180,832 |
-| **Total (input + output + reasoning)** | **1,045,613** |
-| Cache read | 107,218,304 |
+| Input | 681,467 |
+| Output | 196,429 |
+| Reasoning | 185,290 |
+| **Total (input + output + reasoning)** | **1,063,186** |
+| Cache read | 112,059,136 |
 | Cache write | 1,230 |
-| Total including cache | 108,265,147 |
+| Total including cache | 113,123,552 |
 
-> Snapshot from the OpenCode session record at 2026-11-03T04:17:38Z, after the documentation
+> Snapshot from the OpenCode session record at 2026-11-03T04:20:29Z, after the documentation
 > release and its local checks. Total cost reported by the session: **$0.00**. The final commit, Pages
 > rebuild and closing response add a small amount more. Cache reads/writes are context-usage figures and
 > are reported separately from the input/output/reasoning total.

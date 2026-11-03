@@ -8,7 +8,7 @@ GitHub Release and the Pages deployment.
 - [ ] Decide the semantic version: patch for fixes, minor for compatible features, major for breaking
       contracts (state schema, exported format, landmark IDs).
 - [ ] Update `APP.version` in `script.js`.
-- [ ] Update `packageVersion`/`projectVersion` in `state.json` if present.
+- [ ] Update `projectVersion` in `state.json`.
 - [ ] Move the relevant notes into a dated `CHANGELOG.md` section; link the compare URL.
 - [ ] Update the README badge/version references if they mention a version.
 

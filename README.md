@@ -184,7 +184,7 @@ north–south near `x = -26`. Geography is compressed and interpretive.
 - [Testing](docs/TESTING.md) · [Deployment](docs/DEPLOYMENT.md) · [Release checklist](docs/RELEASE_CHECKLIST.md)
 - [Accessibility](docs/ACCESSIBILITY.md) · [Performance](docs/PERFORMANCE.md) · [FAQ](docs/FAQ.md) · [Roadmap](docs/ROADMAP.md)
 - [Contributing](CONTRIBUTING.md) · [Code of Conduct](CODE_OF_CONDUCT.md) · [Security](SECURITY.md) · [Support](SUPPORT.md)
-- [Changelog](CHANGELOG.md) · [Authors](AUTHORS.md) · [Confidentiality and third-party notices](THIRD_PARTY_NOTICES.md)
+- [Changelog](CHANGELOG.md) · [Authors](AUTHORS.md) · [Third-party notices](THIRD_PARTY_NOTICES.md)
 
 ## Status
 
