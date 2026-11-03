@@ -4,6 +4,22 @@ All notable changes to **Bangkok 3D — Interactive Urban Tourist Guide & Explor
 documented here. The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and the
 project uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.1.2] — 2026-11-03
+
+### Fixed
+
+- Restored reliable walking after interacting with the guide drawer or notes field. Focus returns to the
+  scene, and a hidden textarea can no longer swallow walk keys.
+- Arrow keys now prevent the page from scrolling while walk mode is active.
+- Movement keys are focused on the scene after switching modes and closing overlays.
+
+### Changed
+
+- Walk hints and documentation now present **arrow keys** and WASD as equal options:
+  `↑ ↓ ← →` / `W A S D`.
+
+[1.1.2]: https://github.com/somphol/bangkok-3d-tour-guide/compare/v1.1.1...v1.1.2
+
 ## [1.1.1] — 2026-11-03
 
 ### Fixed

@@ -18,7 +18,7 @@
 
   const APP = {
     name: 'Bangkok 3D — Interactive Urban Tourist Guide & Explorer Studio',
-    version: '1.1.1',
+    version: '1.1.2',
     city: 'Bangkok',
     storageKey: 'bangkok3d.state.v1',
     exportName: 'bangkok_3d_tour.json',
@@ -72,7 +72,7 @@
       'map.label': 'Chao Phraya · Rattanakosin',
       'tour.next': 'Next',
       'walk.click': 'Drag to look around',
-      'walk.esc': 'WASD to walk · scroll to zoom · E to inspect',
+      'walk.esc': 'Arrow keys or WASD to walk · scroll to zoom · E to inspect',
       'drawer.visit': 'Visitor notes',
       'drawer.notes': 'Your notes',
       'drawer.notesPh': 'What do you want to remember?',
@@ -107,7 +107,7 @@
       'help.eyebrow': 'Field guide',
       'help.title': 'How to explore',
       'help.modes': 'Modes',
-      'help.modesText': 'Drone orbits the skyline. Walk drops you onto the river promenade with drag-to-look and WASD. Transit follows a spline along the river and stops at each landmark.',
+      'help.modesText': 'Drone orbits the skyline. Walk drops you onto the river promenade with drag-to-look and arrow keys or WASD. Transit follows a spline along the river and stops at each landmark.',
       'help.time': 'Light',
       'help.timeText': 'Midday, golden hour and neon night change the sky, sun, fog, water and every lit window.',
       'help.keys': 'Keys',
@@ -116,8 +116,8 @@
       'help.credit': 'Built with OpenCode and DeepSeek V4.1 Flash. Three.js r128. Geography is compressed and interpretive.',
       'hint.droneKey': 'DRAG',
       'hint.drone': 'Orbit the city · scroll to zoom · right-drag to pan',
-      'hint.walkKey': 'WASD',
-      'hint.walk': 'Drag to look · scroll to zoom · WASD walk · Shift run · E inspect',
+      'hint.walkKey': '↑ ↓ ← →',
+      'hint.walk': 'Drag to look · scroll to zoom · arrow keys or WASD walk · Shift run · E inspect',
       'hint.inspect': 'Inspect · {name}',
       'hint.openGuide': 'Click to open the guide',
       'hint.tourKey': 'TOUR',
@@ -178,7 +178,7 @@
       'map.label': 'เจ้าพระยา · รัตนโกสินทร์',
       'tour.next': 'ถัดไป',
       'walk.click': 'ลากเพื่อหันมอง',
-      'walk.esc': 'WASD เพื่อเดิน · เลื่อนล้อเพื่อซูม · E เพื่อดูข้อมูล',
+      'walk.esc': 'ใช้ลูกศรหรือ WASD เพื่อเดิน · เลื่อนล้อเพื่อซูม · E เพื่อดูข้อมูล',
       'drawer.visit': 'ข้อมูลการเยี่ยมชม',
       'drawer.notes': 'บันทึกของคุณ',
       'drawer.notesPh': 'อยากจำอะไรไว้บ้าง?',
@@ -213,7 +213,7 @@
       'help.eyebrow': 'คู่มือภาคสนาม',
       'help.title': 'วิธีสำรวจเมือง',
       'help.modes': 'โหมดกล้อง',
-      'help.modesText': 'โหมดโดรนหมุนรอบเส้นขอบฟ้า โหมดเดินพาคุณลงสู่ทางเดินริมน้ำ ลากเมาส์เพื่อหันมอง และใช้ WASD เดิน โหมดโดยสารเคลื่อนตามเส้นโค้งริมแม่น้ำและหยุดที่แลนด์มาร์กทุกแห่ง',
+      'help.modesText': 'โหมดโดรนหมุนรอบเส้นขอบฟ้า โหมดเดินพาคุณลงสู่ทางเดินริมน้ำ ลากเมาส์เพื่อหันมอง และใช้ลูกศรหรือ WASD เดิน โหมดโดยสารเคลื่อนตามเส้นโค้งริมแม่น้ำและหยุดที่แลนด์มาร์กทุกแห่ง',
       'help.time': 'แสง',
       'help.timeText': 'กลางวัน แสงทอง และกลางคืนนีออน เปลี่ยนท้องฟ้า ดวงอาทิตย์ หมอก ผิวน้ำ และหน้าต่างที่สว่างทุกบาน',
       'help.keys': 'ปุ่มลัด',
@@ -222,8 +222,8 @@
       'help.credit': 'สร้างด้วย OpenCode และ DeepSeek V4.1 Flash · Three.js r128 · ภูมิศาสตร์ถูกย่อและตีความ',
       'hint.droneKey': 'ลาก',
       'hint.drone': 'หมุนชมเมือง · เลื่อนล้อเพื่อซูม · ลากขวาเพื่อเลื่อนภาพ',
-      'hint.walkKey': 'WASD',
-      'hint.walk': 'ลากเพื่อหันมอง · เลื่อนล้อเพื่อซูม · WASD เพื่อเดิน · Shift เพื่อวิ่ง · E เพื่อดูข้อมูล',
+      'hint.walkKey': '↑ ↓ ← →',
+      'hint.walk': 'ลากเพื่อหันมอง · เลื่อนล้อเพื่อซูม · ใช้ลูกศรหรือ WASD เดิน · Shift เพื่อวิ่ง · E เพื่อดูข้อมูล',
       'hint.inspect': 'ดูข้อมูล · {name}',
       'hint.openGuide': 'คลิกเพื่อเปิดคู่มือ',
       'hint.tourKey': 'ทัวร์',
@@ -2413,6 +2413,16 @@
     }
   }
 
+  function focusScene() {
+    const active = document.activeElement;
+    if (active && active !== document.body && active !== dom.canvas && typeof active.blur === 'function') {
+      active.blur();
+    }
+    if (dom.canvas && dom.canvas.focus) {
+      try { dom.canvas.focus({ preventScroll: true }); } catch (err) { /* older browsers */ }
+    }
+  }
+
   function onWheelZoom(e) {
     if (introVisible || drawerOpen || helpOpen) return;
     if (state.mode !== 'walk' && state.mode !== 'tour') return;
@@ -2477,6 +2487,7 @@
     applyViewFov();
     updateHint();
     updateDrawerButtons();
+    if (!drawerOpen && !helpOpen) focusScene();
     if (!(opts && opts.silent)) {
       if (mode === 'tour') toast(t('toast.tourStart'));
     }
@@ -3197,6 +3208,7 @@
     updateTrailFab();
     if (state.mode === 'walk' && !walkHintDismissed) dom.walkHint.hidden = false;
     if (state.mode === 'tour') updateTourHud();
+    focusScene();
   }
 
   function renderDrawer(l, keepNote) {
@@ -3561,6 +3573,7 @@
     dom.helpModal.hidden = true;
     if (state.mode === 'drone' && !drawerOpen && !tween) orbit.enabled = true;
     if (state.mode === 'tour' && tourResume) { tourState.playing = true; tourResume = false; }
+    focusScene();
   }
 
   function updateTrailFab() {
@@ -3654,6 +3667,7 @@
       if (introVisible || drawerOpen || helpOpen) return;
       if (e.pointerType === 'mouse' && e.button !== 0) return;
       down = { x: e.clientX, y: e.clientY };
+      focusScene();
       if (state.mode === 'walk') {
         const eul = walkEuler.setFromQuaternion(camera.quaternion, 'YXZ');
         walkLook.yaw = eul.y;
@@ -3764,7 +3778,8 @@
 
   function onKeyDown(e) {
     const tag = (e.target && e.target.tagName || '').toLowerCase();
-    if (tag === 'input' || tag === 'textarea' || tag === 'select') return;
+    const editing = tag === 'input' || tag === 'textarea' || tag === 'select';
+    if (editing && (drawerOpen || helpOpen)) return;
     if (e.metaKey || e.ctrlKey || e.altKey) return;
 
     if (e.code === 'Escape') {
@@ -3781,6 +3796,9 @@
       }
       return;
     }
+
+    const walkKeys = ['KeyW', 'KeyA', 'KeyS', 'KeyD', 'ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ShiftLeft', 'ShiftRight'];
+    if (state.mode === 'walk' && walkKeys.includes(e.code)) e.preventDefault();
 
     switch (e.code) {
       case 'Digit1': setMode('drone'); break;
@@ -3840,6 +3858,7 @@
     dom.intro.classList.add('is-gone');
     orbit.autoRotate = false;
     if (state.mode === 'drone') orbit.enabled = !drawerOpen && !helpOpen;
+    focusScene();
     setTimeout(() => { dom.intro.style.display = 'none'; }, 900);
   }
 
@@ -4074,6 +4093,15 @@
         zoom: +freeZoom.toFixed(3),
         dragging: walkLook.active,
         pointerLock: false
+      }),
+      getWalk: () => ({
+        mode: state.mode,
+        keys: Object.assign({}, keys),
+        position: camera.position.toArray(),
+        player: playerPos.toArray(),
+        blocked: walkBlocked(camera.position.x, camera.position.z),
+        drawerOpen,
+        helpOpen
       })
     };
 

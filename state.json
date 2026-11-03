@@ -20,14 +20,14 @@
     "publishedDurationHuman": "1h 5m 29s"
   },
   "tokens": {
-    "input": 693099,
-    "output": 201320,
-    "reasoning": 188464,
-    "cacheRead": 116010624,
+    "input": 727367,
+    "output": 214333,
+    "reasoning": 200066,
+    "cacheRead": 129434112,
     "cacheWrite": 1230,
-    "total": 1082883,
-    "totalWithCache": 117094737,
-    "note": "Snapshot from the OpenCode session record at 2026-11-03T04:38:19Z, after the 1.1.1 drag-direction patch and local verification. total = input + output + reasoning. Cache reads/writes are context-usage figures and are reported separately; the final commit, Pages rebuild and closing response add a small amount more.",
+    "total": 1141766,
+    "totalWithCache": 130577108,
+    "note": "Snapshot from the OpenCode session record at 2026-11-03T04:49:44Z, after the 1.1.2 walking-focus and arrow-key release. total = input + output + reasoning. Cache reads/writes are context-usage figures and are reported separately; the final commit, Pages rebuild and closing response add a small amount more.",
     "cost": 0.0
   },
   "cost": {
@@ -107,7 +107,7 @@
   "files": {
     "index.html": 265,
     "style.css": 1377,
-    "script.js": 4169,
+    "script.js": 4197,
     "screenshots": 10,
     "totalRepositoryBytesApprox": 3200000,
     "docs": 11,
@@ -139,15 +139,19 @@
     {
       "at": "2026-11-03T04:38:19Z",
       "summary": "Patch: inverted horizontal walk drag so dragging left reveals the right side of the landscape. Vertical look and zoom unchanged. Version 1.1.1."
+    },
+    {
+      "at": "2026-11-03T04:49:44Z",
+      "summary": "Patch: restored reliable walking after guide/notes interaction by returning focus to the scene; arrow keys now prevent page scroll and are presented alongside WASD. Version 1.1.2."
     }
   ],
-  "projectVersion": "1.1.1",
-  "version": "1.1.1",
+  "projectVersion": "1.1.2",
+  "version": "1.1.2",
   "release": {
-    "version": "1.1.1",
-    "tag": "v1.1.1",
-    "previous": "v1.1.0",
-    "url": "https://github.com/somphol/bangkok-3d-tour-guide/releases/tag/v1.1.1",
-    "publishedAt": "2026-11-03T04:38:19Z"
+    "version": "1.1.2",
+    "tag": "v1.1.2",
+    "previous": "v1.1.1",
+    "url": "https://github.com/somphol/bangkok-3d-tour-guide/releases/tag/v1.1.2",
+    "publishedAt": "2026-11-03T04:49:44Z"
   }
 }

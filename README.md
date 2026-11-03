@@ -1,7 +1,7 @@
 # Bangkok 3D — Interactive Urban Tourist Guide & Explorer Studio
 
 [![Live demo](https://img.shields.io/badge/live-demo-e7c27d)](https://somphol.github.io/bangkok-3d-tour-guide/)
-[![Release](https://img.shields.io/badge/release-v1.1.1-6cbcac)](CHANGELOG.md)
+[![Release](https://img.shields.io/badge/release-v1.1.2-6cbcac)](CHANGELOG.md)
 [![License: MIT](https://img.shields.io/badge/license-MIT-brightgreen)](LICENSE)
 [![No build](https://img.shields.io/badge/build-none-lightgrey)](docs/ARCHITECTURE.md)
 
@@ -34,8 +34,9 @@ visited, added to a custom route, and annotated with private notes.
 
 - **Drone city flyover** — OrbitControls: drag to rotate, wheel to zoom, right-drag to pan. A cinematic
   orbit plays behind the title screen. Each landmark has a “Fly here” camera move.
-- **First-person street walk** — drag anywhere on the scene to look around, then WASD / arrows to
-  walk, Shift to run, scroll to zoom, `E` to inspect the nearest landmark. There is no pointer lock:
+- **First-person street walk** — drag anywhere on the scene to look around, then walk with the
+  **arrow keys** (`↑ ↓ ← →`) or `WASD`. Shift runs, scroll zooms, and `E` inspects the nearest
+  landmark. There is no pointer lock:
   the cursor stays yours. Movement is blocked by buildings, trees, temple bases and the riverbank.
   Footsteps follow walking speed.
 - **Automated transit tour** — a Catmull-Rom river-and-city route with five dwell stops. Pause with
@@ -111,7 +112,7 @@ Current result: **24 / 24**.
 | --- | --- |
 | `1` / `2` / `3` | Drone / Walk / Transit |
 | Drag, wheel, right-drag | Orbit, zoom, pan (drone) |
-| `WASD` / arrows | Walk |
+| Arrow keys (`↑ ↓ ← →`) or `WASD` | Walk |
 | `Shift` | Run |
 | Drag on the scene | Look around |
 | Scroll | Zoom (walk/tour field of view) |
@@ -188,9 +189,9 @@ north–south near `x = -26`. Geography is compressed and interpretive.
 
 ## Status
 
-Version **1.1.0**. The latest release adds normal drag-to-look walking, scroll-wheel zoom and the
-documentation set above. Runtime dependencies are pinned CDN files; there is no package manager and
-no build artifact. The deployed copy and the repository are the same static source.
+Version **1.1.2**. Walk with the arrow keys or WASD. This patch restores reliable walking after using
+the guide and fixes focus handling. Runtime dependencies are pinned CDN files; there is no package
+manager and no build artifact. The deployed copy and the repository are the same static source.
 
 ## Credits
 

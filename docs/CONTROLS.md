@@ -8,7 +8,7 @@ interface at all times.
 | Mode | Shortcut | How the camera moves |
 | --- | --- | --- |
 | Drone flyover | `1` | Orbit drag, wheel zoom, right-drag pan |
-| Street walk | `2` | Drag to look, WASD/arrows to walk, wheel to zoom |
+| Street walk | `2` | Drag to look, arrow keys or WASD to walk, wheel to zoom |
 | Transit tour | `3` | Automated spline; wheel changes field of view |
 
 ## Drone mode
@@ -34,7 +34,7 @@ Walk mode uses ordinary **drag-to-look**. There is no pointer capture.
 | Input | Action |
 | --- | --- |
 | Left-drag on the scene | Look around; the cursor remains visible |
-| `WASD` or arrow keys | Walk forward/back and strafe |
+| `↑` `↓` `←` `→` or `W` `A` `S` `D` | Walk forward/back and strafe |
 | `Shift` | Run |
 | Scroll wheel | Zoom in/out by changing the field of view |
 | `E` | Open the nearest landmark within 30 units |
@@ -42,7 +42,7 @@ Walk mode uses ordinary **drag-to-look**. There is no pointer capture.
 | Click the guide/list | Open the visitor drawer |
 | `2` again | Re-enter walk mode at the saved position |
 
-Walking is blocked by buildings, trees, temple bases and the riverbank. The walkable area is the east
+Arrow keys are the simplest option if you do not use WASD. Both are supported. Walking is blocked by buildings, trees, temple bases and the riverbank. The walkable area is the east
 bank; there is no bridge walking in this release. The look hint appears on entry, dismisses on the first
 drag, and auto-hides after seven seconds.
 
