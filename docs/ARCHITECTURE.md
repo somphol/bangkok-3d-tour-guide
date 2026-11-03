@@ -111,6 +111,8 @@ Walk look is implemented in-house, with **no pointer lock**:
 - Movement uses the camera’s flattened forward/right vectors. X and Z are resolved independently
   against an AABB collider list, which gives axis-aligned sliding along walls.
 - Eye height is 1.72 units with a small speed-dependent head bob; footsteps fire on travelled distance.
+- The on-screen arrow pad writes the same movement flags as the keyboard, so mouse/touch walking and
+  keyboard walking share one movement path.
 - The zoom wheel changes `freeZoom` (0.6–1.8) and the camera field of view (26–86°).
 
 ### Transit tour

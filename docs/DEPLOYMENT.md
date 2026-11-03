@@ -85,6 +85,9 @@ Then:
   - `https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js`
 - Google Fonts supplies Chonburi, Kanit and Cormorant Garamond. An offline/blocked CDN leaves the app
   with fallback fonts and a visible WebGL/library error if Three.js is unavailable.
+- `index.html` references `style.css?v=1.1.3` and `script.js?v=1.1.3`. Bump these query strings with
+  every release so browsers cannot mix a new HTML shell with an old script. The static check enforces
+  the match.
 - Do not add a service worker without a cache-versioning plan; stale HTML plus new `script.js` is a
   common failure mode.
 

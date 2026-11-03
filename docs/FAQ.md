@@ -23,9 +23,9 @@ the hand-built low-poly visual language. Every building, texture and landmark is
 
 ### Why does the walk mode need a keyboard?
 
-Walking is spatial movement, not just looking. A keyboard gives continuous forward/strafe control and
-is the only supported input for movement in this release. Touch users can drag to look, but should use
-the drone or transit tour for the intended mobile experience.
+Walking is spatial movement, not just looking. You can hold the on-screen arrow pad with a mouse or
+touch, or use the arrow keys / WASD. A keyboard is optional; the pad is the simplest option if you do
+not use WASD.
 
 ### Is the mouse captured?
 

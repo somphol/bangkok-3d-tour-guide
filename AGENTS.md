@@ -90,8 +90,8 @@ dataset, UI, export schema and self-test.
 
 ## Known issues
 
-- Walk mode requires a keyboard; mouse drag is used to look. Touch devices get a toast and should use
-  drone/tour. The walk boundary is the east bank; there is no bridge collision or west-bank walking.
+- Walk mode supports mouse drag-to-look plus an on-screen arrow pad, arrow keys, or WASD. A keyboard is
+  optional. The walk boundary is the east bank; there is no bridge collision or west-bank walking.
 - The tourist fees and opening hours are a 2026 snapshot and are not fetched live.
 - Speech narration depends on installed OS voices; Thai may fall back to an English voice on some
   systems.

@@ -1,7 +1,7 @@
 # Bangkok 3D — Interactive Urban Tourist Guide & Explorer Studio
 
 [![Live demo](https://img.shields.io/badge/live-demo-e7c27d)](https://somphol.github.io/bangkok-3d-tour-guide/)
-[![Release](https://img.shields.io/badge/release-v1.1.2-6cbcac)](CHANGELOG.md)
+[![Release](https://img.shields.io/badge/release-v1.1.3-6cbcac)](CHANGELOG.md)
 [![License: MIT](https://img.shields.io/badge/license-MIT-brightgreen)](LICENSE)
 [![No build](https://img.shields.io/badge/build-none-lightgrey)](docs/ARCHITECTURE.md)
 
@@ -35,8 +35,8 @@ visited, added to a custom route, and annotated with private notes.
 - **Drone city flyover** — OrbitControls: drag to rotate, wheel to zoom, right-drag to pan. A cinematic
   orbit plays behind the title screen. Each landmark has a “Fly here” camera move.
 - **First-person street walk** — drag anywhere on the scene to look around, then walk with the
-  **arrow keys** (`↑ ↓ ← →`) or `WASD`. Shift runs, scroll zooms, and `E` inspects the nearest
-  landmark. There is no pointer lock:
+  **on-screen arrow pad**, the **arrow keys** (`↑ ↓ ← →`) or `WASD`. Shift runs, scroll zooms, and
+  `E` inspects the nearest landmark. There is no pointer lock:
   the cursor stays yours. Movement is blocked by buildings, trees, temple bases and the riverbank.
   Footsteps follow walking speed.
 - **Automated transit tour** — a Catmull-Rom river-and-city route with five dwell stops. Pause with
@@ -169,8 +169,8 @@ north–south near `x = -26`. Geography is compressed and interpretive.
 - **Not a survey map.** Landmark positions, distances and heights are stylised so five sites fit one
   readable diorama. Do not use it for navigation.
 - **Prices and hours are a snapshot, not live data.** Confirm with official sources before travelling.
-- **Walk mode is keyboard + mouse.** On touch devices the HUD explains this; drone and tour work with
-  touch. The walk area is the east bank only; the river is a boundary.
+- **Walk mode works with mouse, touch or keyboard.** Drag to look, then use the on-screen arrow pad,
+  arrow keys or WASD to move. The walk area is the east bank only; the river is a boundary.
 - **Audio needs a user gesture.** The “Enter the city” button and sound toggle initialise it; browsers
   block autoplay by design. Narration depends on installed system voices.
 - **Headless verification** runs under SwiftShader at a few frames per second; the scene is built for
@@ -189,9 +189,9 @@ north–south near `x = -26`. Geography is compressed and interpretive.
 
 ## Status
 
-Version **1.1.2**. Walk with the arrow keys or WASD. This patch restores reliable walking after using
-the guide and fixes focus handling. Runtime dependencies are pinned CDN files; there is no package
-manager and no build artifact. The deployed copy and the repository are the same static source.
+Version **1.1.3**. Walk with the on-screen arrow pad, arrow keys or WASD. This release makes
+walking work without a keyboard and fixes accidental guide opening during scene clicks. Runtime
+dependencies are pinned CDN files; there is no package manager and no build artifact.
 
 ## Credits
 

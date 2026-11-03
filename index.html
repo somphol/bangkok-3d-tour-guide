@@ -24,7 +24,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Chonburi&family=Kanit:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css?v=1.1.3">
 </head>
 <body class="is-intro">
 <div id="app">
@@ -142,6 +142,13 @@
     </div>
   </div>
 
+  <div class="walk-pad glass" id="walkPad" hidden aria-label="Walk controls">
+    <button class="walk-pad-btn pad-up" data-move="forward" aria-label="Walk forward" data-i18n-aria="walk.forward">↑</button>
+    <button class="walk-pad-btn pad-left" data-move="left" aria-label="Strafe left" data-i18n-aria="walk.left">←</button>
+    <span class="walk-pad-centre" aria-hidden="true">WALK</span>
+    <button class="walk-pad-btn pad-right" data-move="right" aria-label="Strafe right" data-i18n-aria="walk.right">→</button>
+    <button class="walk-pad-btn pad-down" data-move="back" aria-label="Walk backward" data-i18n-aria="walk.back">↓</button>
+  </div>
   <div class="walk-hint glass" id="walkHint" hidden>
     <strong data-i18n="walk.click">Drag to look around</strong>
     <span data-i18n="walk.esc">Arrow keys or WASD to walk · scroll to zoom · E to inspect</span>
@@ -260,6 +267,6 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
-<script src="script.js"></script>
+<script src="script.js?v=1.1.3"></script>
 </body>
 </html>

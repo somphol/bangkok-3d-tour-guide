@@ -4,6 +4,27 @@ All notable changes to **Bangkok 3D — Interactive Urban Tourist Guide & Explor
 documented here. The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and the
 project uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.1.3] — 2026-11-03
+
+### Added
+
+- **On-screen walking arrow pad** for Walk mode. Hold ↑ / ↓ / ← / → with a mouse or touch to move;
+  a physical keyboard is no longer required.
+- Local CSS/JS cache-busting query strings tied to the app version.
+
+### Fixed
+
+- Walk-mode clicks now select only the small floating landmark markers. The broad invisible landmark
+  volumes could previously open the guide from an ordinary scene click, pausing movement.
+- The walk hint, mobile notice and accessibility/FAQ copy now describe pointer-free, keyboard-optional
+  walking accurately.
+
+### Changed
+
+- Walk controls are documented as: on-screen pad, arrow keys, or WASD; drag to look; scroll to zoom.
+
+[1.1.3]: https://github.com/somphol/bangkok-3d-tour-guide/compare/v1.1.2...v1.1.3
+
 ## [1.1.2] — 2026-11-03
 
 ### Fixed

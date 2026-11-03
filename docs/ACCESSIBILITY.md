@@ -33,7 +33,7 @@ known to be incomplete, and how to improve it.
   complete focus trap or return focus to the invoking control in every path.
 - **Keyboard-only walking:** walk look requires pointer drag; there is no arrow-key look alternative
   while walking. Orbit mode is fully keyboard-limited as well (pointer drag is primary).
-- **Touch walk:** movement needs a physical keyboard. Drone and transit are the intended touch modes.
+- **Touch walk:** the on-screen arrow pad supports touch movement; drag still handles look.
 - **Small Thai text:** some Thai labels are 8–10 px at the smallest breakpoint; readability should be
   tested with Thai users.
 - **Contrast:** gold-on-glass text meets the intended dark palette visually but has not been fully

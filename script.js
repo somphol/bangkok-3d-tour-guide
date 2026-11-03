@@ -18,7 +18,7 @@
 
   const APP = {
     name: 'Bangkok 3D — Interactive Urban Tourist Guide & Explorer Studio',
-    version: '1.1.2',
+    version: '1.1.3',
     city: 'Bangkok',
     storageKey: 'bangkok3d.state.v1',
     exportName: 'bangkok_3d_tour.json',
@@ -73,6 +73,11 @@
       'tour.next': 'Next',
       'walk.click': 'Drag to look around',
       'walk.esc': 'Arrow keys or WASD to walk · scroll to zoom · E to inspect',
+      'walk.forward': 'Walk forward',
+      'walk.back': 'Walk backward',
+      'walk.left': 'Strafe left',
+      'walk.right': 'Strafe right',
+      'walk.pad': 'Walk controls',
       'drawer.visit': 'Visitor notes',
       'drawer.notes': 'Your notes',
       'drawer.notesPh': 'What do you want to remember?',
@@ -138,7 +143,7 @@
       'toast.muted': 'Sound off',
       'toast.sound': 'Sound on',
       'toast.preset': 'Light: {name}',
-      'toast.walkMobile': 'Walk mode needs a keyboard and mouse. Try the drone or river tour on this device.',
+      'toast.walkMobile': 'Use the on-screen arrows to walk and drag the scene to look. A keyboard is optional.',
       'toast.noNear': 'Walk closer to a landmark, then press E.',
       'toast.narrate': 'Narration is not available in this browser.',
       'toast.tourStart': 'The river tour has begun. Sit back.',
@@ -179,6 +184,11 @@
       'tour.next': 'ถัดไป',
       'walk.click': 'ลากเพื่อหันมอง',
       'walk.esc': 'ใช้ลูกศรหรือ WASD เพื่อเดิน · เลื่อนล้อเพื่อซูม · E เพื่อดูข้อมูล',
+      'walk.forward': 'เดินไปข้างหน้า',
+      'walk.back': 'เดินถอยหลัง',
+      'walk.left': 'ก้าวไปทางซ้าย',
+      'walk.right': 'ก้าวไปทางขวา',
+      'walk.pad': 'ปุ่มควบคุมการเดิน',
       'drawer.visit': 'ข้อมูลการเยี่ยมชม',
       'drawer.notes': 'บันทึกของคุณ',
       'drawer.notesPh': 'อยากจำอะไรไว้บ้าง?',
@@ -244,7 +254,7 @@
       'toast.muted': 'ปิดเสียง',
       'toast.sound': 'เปิดเสียง',
       'toast.preset': 'แสง: {name}',
-      'toast.walkMobile': 'โหมดเดินต้องใช้คีย์บอร์ดและเมาส์ ลองโหมดโดรนหรือล่องเรือบนอุปกรณ์นี้',
+      'toast.walkMobile': 'ใช้ปุ่มลูกศรบนหน้าจอเพื่อเดิน และลากฉากเพื่อหันมอง คีย์บอร์ดไม่จำเป็น',
       'toast.noNear': 'เดินเข้าใกล้แลนด์มาร์ก แล้วกด E',
       'toast.narrate': 'เบราว์เซอร์นี้ไม่รองรับการบรรยายเสียง',
       'toast.tourStart': 'เริ่มทัวร์ริมน้ำแล้ว นั่งสบาย ๆ ได้เลย',
@@ -620,6 +630,7 @@
     tourTrack: $('#tourTrack'),
     tourBoat: $('#tourBoat'),
     walkHint: $('#walkHint'),
+    walkPad: $('#walkPad'),
     crosshair: $('#crosshair'),
     intro: $('#intro'),
     startBtn: $('#startBtn'),
@@ -2270,6 +2281,7 @@
       );
       pick.position.set(l.position[0], Math.max(8, l.markerY * 0.45), l.position[1]);
       pick.userData.landmarkId = l.id;
+      pick.userData.pickKind = 'volume';
       scene.add(pick);
       pickTargets.push(pick);
 
@@ -2327,6 +2339,7 @@
       g.userData.landmarkId = l.id;
       [ring, gem].forEach((m) => {
         m.userData.landmarkId = l.id;
+        m.userData.pickKind = 'marker';
         pickTargets.push(m);
       });
       markerRoot.add(g);
@@ -2353,6 +2366,7 @@
   let bobT = 0;
   let stepAccum = 0;
   const keys = {};
+  const padKeys = { forward: false, back: false, left: false, right: false };
 
   // Normal drag-to-look walk controls (no pointer lock).
   const walkLook = { active: false, pointerId: null, lastX: 0, lastY: 0, yaw: 0, pitch: 0, moved: 0 };
@@ -2413,6 +2427,11 @@
     }
   }
 
+  function releaseWalkPad() {
+    Object.keys(padKeys).forEach((k) => { padKeys[k] = false; });
+    if (dom.walkPad) $$('.walk-pad-btn', dom.walkPad).forEach((b) => b.classList.remove('is-held'));
+  }
+
   function focusScene() {
     const active = document.activeElement;
     if (active && active !== document.body && active !== dom.canvas && typeof active.blur === 'function') {
@@ -2469,6 +2488,7 @@
     } else {
       clearTimeout(walkHintTimer);
       endWalkDrag();
+      releaseWalkPad();
       dom.walkHint.hidden = true;
       dom.crosshair.hidden = true;
       if (mode === 'drone') {
@@ -2499,6 +2519,8 @@
     dom.tourBar.hidden = state.mode !== 'tour';
     dom.hintBar.hidden = state.mode === 'tour';
     dom.walkHint.hidden = !(state.mode === 'walk' && !walkHintDismissed && !drawerOpen && !helpOpen);
+    dom.walkPad.hidden = !(state.mode === 'walk' && !drawerOpen && !helpOpen && !introVisible);
+    if (dom.walkPad.hidden) releaseWalkPad();
     dom.crosshair.hidden = true;
     document.body.classList.toggle('is-walking', state.mode === 'walk');
     document.body.classList.toggle('is-touring', state.mode === 'tour');
@@ -2518,8 +2540,8 @@
     if (state.mode !== 'walk' || drawerOpen || helpOpen) return;
     // Keep the walker on the east bank, inside the city.
     let mx = 0, mz = 0;
-    const fwd = (keys.KeyW || keys.ArrowUp ? 1 : 0) - (keys.KeyS || keys.ArrowDown ? 1 : 0);
-    const side = (keys.KeyD || keys.ArrowRight ? 1 : 0) - (keys.KeyA || keys.ArrowLeft ? 1 : 0);
+    const fwd = (keys.KeyW || keys.ArrowUp || padKeys.forward ? 1 : 0) - (keys.KeyS || keys.ArrowDown || padKeys.back ? 1 : 0);
+    const side = (keys.KeyD || keys.ArrowRight || padKeys.right ? 1 : 0) - (keys.KeyA || keys.ArrowLeft || padKeys.left ? 1 : 0);
     const sprint = keys.ShiftLeft || keys.ShiftRight;
     const speed = sprint ? 8.4 : 4.2;
 
@@ -3038,6 +3060,10 @@
     $$('[data-i18n-ph]').forEach((el) => {
       el.placeholder = t(el.dataset.i18nPh);
     });
+    $$('[data-i18n-aria]').forEach((el) => {
+      el.setAttribute('aria-label', t(el.dataset.i18nAria));
+    });
+    if (dom.walkPad) dom.walkPad.setAttribute('aria-label', t('walk.pad'));
     updateLangUI();
     updateTimeButtons();
     updateModeUI();
@@ -3184,6 +3210,8 @@
     dom.labels.classList.add('is-dim');
     if (state.mode === 'drone') orbit.enabled = false;
     dom.walkHint.hidden = true;
+    dom.walkPad.hidden = true;
+    releaseWalkPad();
     dom.crosshair.hidden = true;
     updateLandmarkList();
     updateTrailFab();
@@ -3208,6 +3236,7 @@
     updateTrailFab();
     if (state.mode === 'walk' && !walkHintDismissed) dom.walkHint.hidden = false;
     if (state.mode === 'tour') updateTourHud();
+    updateModeUI();
     focusScene();
   }
 
@@ -3702,6 +3731,33 @@
     });
     dom.canvas.addEventListener('wheel', onWheelZoom, { passive: false });
 
+    // On-screen walking arrows: mouse and touch, no keyboard required.
+    $$('.walk-pad-btn', dom.walkPad).forEach((btn) => {
+      const move = btn.dataset.move;
+      const press = (e) => {
+        if (state.mode !== 'walk' || drawerOpen || helpOpen) return;
+        e.preventDefault();
+        padKeys[move] = true;
+        btn.classList.add('is-held');
+        dismissWalkHint();
+        if (btn.setPointerCapture) {
+          try { btn.setPointerCapture(e.pointerId); } catch (err) { /* optional */ }
+        }
+      };
+      const release = (e) => {
+        e.preventDefault();
+        padKeys[move] = false;
+        btn.classList.remove('is-held');
+        if (e && btn.releasePointerCapture) {
+          try { btn.releasePointerCapture(e.pointerId); } catch (err) { /* optional */ }
+        }
+      };
+      btn.addEventListener('pointerdown', press);
+      btn.addEventListener('pointerup', release);
+      btn.addEventListener('pointercancel', release);
+      btn.addEventListener('contextmenu', (e) => e.preventDefault());
+    });
+
     window.addEventListener('keydown', onKeyDown);
     window.addEventListener('resize', onResize);
     document.addEventListener('visibilitychange', () => {
@@ -3770,6 +3826,7 @@
     raycaster.setFromCamera({ x: nx, y: ny }, camera);
     const hits = raycaster.intersectObjects(pickTargets, false);
     for (const h of hits) {
+      if (state.mode === 'walk' && h.object.userData.pickKind !== 'marker') continue;
       const id = h.object.userData.landmarkId;
       if (id && LANDMARK_BY_ID[id]) return id;
     }
@@ -3839,6 +3896,7 @@
   window.addEventListener('blur', () => {
     Object.keys(keys).forEach((k) => { keys[k] = false; });
     endWalkDrag();
+    releaseWalkPad();
   });
 
   function onResize() {
@@ -3858,6 +3916,7 @@
     dom.intro.classList.add('is-gone');
     orbit.autoRotate = false;
     if (state.mode === 'drone') orbit.enabled = !drawerOpen && !helpOpen;
+    updateModeUI();
     focusScene();
     setTimeout(() => { dom.intro.style.display = 'none'; }, 900);
   }

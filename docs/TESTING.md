@@ -76,7 +76,7 @@ Checklist:
 
 - [ ] Intro appears; **Enter the city** dismisses it and starts sound.
 - [ ] Drone drag orbits; wheel zooms; right-drag pans; recenter returns.
-- [ ] Walk: drag looks; cursor stays visible; no pointer capture; WASD moves; Shift runs; wheel zooms.
+- [ ] Walk: drag looks; cursor stays visible; no pointer capture; on-screen pad, arrow keys and WASD move; Shift runs; wheel zooms.
 - [ ] Walk cannot leave the east bank or pass through buildings/trees/temple bases.
 - [ ] Clicking a marker or label opens the guide; dragging never opens it.
 - [ ] Transit: stops advance, Space pauses, N jumps, replay works.

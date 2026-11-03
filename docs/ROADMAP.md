@@ -11,14 +11,15 @@ The roadmap is intentionally small and honest. Items are not commitments or date
 - Spatial Web Audio ambience and walking footsteps.
 - Local storage, portable JSON export/import, minimap and responsive layout.
 - 24-check in-page self-test, static CI and release documentation.
+- Mouse/touch walking via the on-screen arrow pad.
 
 ## Next
 
 1. **Accessibility pass** — focus trap/return focus for the guide and help dialogs; a non-drag look
    alternative; contrast audit including Thai text.
 2. **Quality selector** — shadows off/low/high, pixel-ratio cap and reduced effects for weaker GPUs.
-3. **Touch walk control** — a simple on-screen stick/look pad for phones, or explicitly keep walk
-   desktop-only and improve the guidance.
+3. **Touch walk polish** — the arrow pad now supports touch movement; add tactile feedback and an
+   optional look pad next.
 4. **More stop detail** — short audio pronunciations for Thai names, and a “nearby” view from each tour
    stop.
 5. **Print/share card** — export a clean itinerary summary image or print stylesheet.

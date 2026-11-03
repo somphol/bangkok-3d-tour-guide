@@ -3,7 +3,7 @@
 | Field | Value |
 | --- | --- |
 | Project | Bangkok 3D — Interactive Urban Tourist Guide & Explorer Studio (`bangkok-3d-tour-guide`) |
-| Version | **1.1.2** |
+| Version | **1.1.3** |
 | Session started | 2026-11-03 02:46:41 UTC |
 | Build started | 2026-11-03 02:48:24 UTC |
 | Source frozen | 2026-11-03 03:49:43 UTC |
@@ -16,25 +16,25 @@
 | Session | `ses_e60b2c542ffezeHzunC0PwPEEY` |
 | Repository | <https://github.com/somphol/bangkok-3d-tour-guide> |
 | Live demo | <https://somphol.github.io/bangkok-3d-tour-guide/> |
-| Release | [v1.1.2](https://github.com/somphol/bangkok-3d-tour-guide/releases/tag/v1.1.2) · previous [v1.1.1](https://github.com/somphol/bangkok-3d-tour-guide/releases/tag/v1.1.1) |
+| Release | [v1.1.3](https://github.com/somphol/bangkok-3d-tour-guide/releases/tag/v1.1.3) · previous [v1.1.2](https://github.com/somphol/bangkok-3d-tour-guide/releases/tag/v1.1.2) |
 | Self-test | **24 / 24 PASS** (local and live, zero runtime errors) |
 
 ## Token usage
 
 | Metric | Tokens |
 | --- | ---: |
-| Input | 727,367 |
-| Output | 214,333 |
-| Reasoning | 200,066 |
-| **Total (input + output + reasoning)** | **1,141,766** |
-| Cache read | 129,434,112 |
+| Input | 763,776 |
+| Output | 230,441 |
+| Reasoning | 214,884 |
+| **Total (input + output + reasoning)** | **1,209,101** |
+| Cache read | 143,166,592 |
 | Cache write | 1,230 |
-| Total including cache | 130,577,108 |
+| Total including cache | 144,376,923 |
 
-> Snapshot from the OpenCode session record at 2026-11-03T04:49:44Z, after the 1.1.2 walking-focus and arrow-key
-> release. Total cost reported by the session: **$0.00**. The final commit, Pages rebuild and closing
-> response add a small amount more. Cache reads/writes are context-usage figures and are reported
-> separately from the input/output/reasoning total.
+> Snapshot from the OpenCode session record at 2026-11-03T05:10:02Z, after the 1.1.3 on-screen walk pad release and
+> local verification. Total cost reported by the session: **$0.00**. The final commit, Pages rebuild
+> and closing response add a small amount more. Cache reads/writes are context-usage figures and are
+> reported separately from the input/output/reasoning total.
 
 ## What was built
 
@@ -159,6 +159,8 @@ r128 OrbitControls example. Walk look is implemented in-house. Fonts: Chonburi, 
   right side of the scene into view. Vertical look and zoom are unchanged.
 - **Patch 1.1.2:** walking focus restored after using the guide/notes; arrow keys now prevent page
   scrolling and are documented alongside WASD.
+- **Patch 1.1.3:** on-screen mouse/touch walk pad added; Walk-mode clicks only select the small marker
+  icons; CSS/JS cache-busting added.
 
 ## Post-freeze work
 

@@ -121,8 +121,7 @@ is handled; the underlying camera shortcuts are paused.
 
 - Drone: one-finger orbit, pinch zoom, two-finger pan (OrbitControls).
 - Transit: touch controls can select UI; wheel zoom is unavailable, but the tour runs automatically.
-- Walk: the scene can be dragged to look, but movement needs a physical keyboard. The HUD shows a
-  notice and recommends drone or transit.
+- Walk: drag to look, then hold the on-screen arrow pad to move. A physical keyboard is optional.
 - Markers and labels are tappable.
 
 ## URL parameters

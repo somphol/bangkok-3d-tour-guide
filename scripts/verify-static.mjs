@@ -105,6 +105,8 @@ check('Three.js r128 CDN is pinned', () => index.includes('three.js/r128/three.m
 check('OrbitControls r128 CDN is pinned', () => index.includes('three@0.128.0/examples/js/controls/OrbitControls.js') || 'OrbitControls CDN missing');
 check('PointerLockControls is absent', () => !index.includes('PointerLockControls') || 'pointer lock script still present');
 check('the walk hint says drag to look', () => index.includes('Drag to look around') || 'drag hint missing');
+check('local asset cache-busting matches APP version', () =>
+  (index.includes(`style.css?v=${appVersion}`) && index.includes(`script.js?v=${appVersion}`)) || 'asset query strings are stale');
 
 const readme = read('README.md');
 const imageRefs = [...readme.matchAll(/screenshots\/[A-Za-z0-9._-]+\.jpg/g)].map((m) => m[0]);

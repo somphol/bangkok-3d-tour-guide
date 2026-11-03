@@ -777,6 +777,53 @@ body.is-intro .topbar { transform: translateY(-8px); }
 .ghost-btn.large { padding: 13px 20px; font-size: 12px; border-radius: 12px; }
 .ghost-btn.small { padding: 8px 12px; font-size: 10.5px; }
 
+
+/* ============================== Walk pad =============================== */
+
+.walk-pad {
+  position: absolute;
+  z-index: 34;
+  right: 22px;
+  bottom: 100px;
+  display: grid;
+  grid-template-columns: 42px 42px 42px;
+  grid-template-rows: 42px 42px 42px;
+  gap: 4px;
+  padding: 8px;
+  border-radius: 22px;
+  touch-action: none;
+  user-select: none;
+}
+.walk-pad-btn {
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--stroke);
+  border-radius: 11px;
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--gold);
+  font-size: 19px;
+  line-height: 1;
+  cursor: pointer;
+  touch-action: none;
+  transition: background 0.16s, color 0.16s, transform 0.12s;
+}
+.walk-pad-btn:hover { background: rgba(231, 194, 125, 0.14); }
+.walk-pad-btn.is-held { background: var(--gold); color: var(--ink); transform: scale(0.94); }
+.walk-pad-centre {
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  color: var(--muted-2);
+  font-size: 7px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+.pad-up { grid-column: 2; grid-row: 1; }
+.pad-left { grid-column: 1; grid-row: 2; }
+.pad-right { grid-column: 3; grid-row: 2; }
+.pad-down { grid-column: 2; grid-row: 3; }
+body.is-intro .walk-pad { opacity: 0; pointer-events: none; }
+
 /* ============================== Drawer ================================= */
 
 .scrim {
@@ -1341,6 +1388,7 @@ body.is-intro .topbar { transform: translateY(-8px); }
   .hint-bar { padding: 7px 12px 7px 8px; }
   .hint-key { display: none; }
   .walk-hint { bottom: 82px; width: calc(100vw - 30px); }
+  .walk-pad { right: 12px; bottom: 150px; grid-template-columns: 38px 38px 38px; grid-template-rows: 38px 38px 38px; padding: 6px; }
   .drawer { width: 100%; }
   .drawer-hero { min-height: 180px; padding: 20px 20px 18px; }
   .drawer-heading { margin-top: 42px; }
