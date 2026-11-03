@@ -14,17 +14,20 @@
     "sessionDurationHuman": "1h 3m 2s",
     "timezone": "UTC",
     "includes": "Project scaffold; renderer, sky shader, stars, sun and moon; sRGB-correct materials and eight procedural facade texture sets; Chao Phraya river with animated water shader, embankments, promenade, railings and lamps; road grid, lane markings, crossings, two bridges, parks, ponds, trees, street lamps and instanced traffic; five procedural landmark models (Wat Arun prangs and porcelain bands; Wat Pho ubosot, four chedis and open-canopy Reclining Buddha; Grand Palace crenellated walls, Wat Phra Kaew, golden chedi and Chakri Maha Prasat; Golden Mount terraced hill with spiral path and gold chedi; Baiyoke glass tower with observation crown, neon and beacon); five bobbing 3D markers and pick volumes; drone, first-person walk with collision, sprint, head bob and footsteps, and a five-stop spline transit tour; EN/TH UI and landmark copy; three lighting presets with smooth transitions; spatial Web Audio synthesis and speech narration; minimap; visited stamps, route builder and notes; localStorage autosave; JSON export/import as bangkok_3d_tour.json; 23-check self-test; responsive mobile layout; documentation, licence, notices, robots, sitemap and GitHub Pages deployment.",
-    "note": "packagedAt is the source-freeze timestamp. The final commit, GitHub push and Pages verification happen after this snapshot and add a small amount of time and tokens."
+    "note": "packagedAt is the source-freeze timestamp; publishedAt is when the GitHub Pages deployment was verified. Tokens are snapshotted at publishedAt, before the final state commit/push and closing response.",
+    "publishedAt": "2026-11-03T03:52:10Z",
+    "publishedDurationSeconds": 3929,
+    "publishedDurationHuman": "1h 5m 29s"
   },
   "tokens": {
-    "input": 554647,
-    "output": 143504,
-    "reasoning": 143617,
-    "cacheRead": 68109952,
+    "input": 564636,
+    "output": 146794,
+    "reasoning": 148088,
+    "cacheRead": 70714752,
     "cacheWrite": 1230,
-    "total": 841768,
-    "totalWithCache": 68952950,
-    "note": "Snapshot from the OpenCode session record at 2026-11-03T03:49:43Z, immediately before the source freeze. total = input + output + reasoning. Cache reads/writes are context-usage figures and are reported separately. The final state commit, GitHub push, Pages build and closing response happen after this snapshot, so live session totals are marginally higher.",
+    "total": 859518,
+    "totalWithCache": 71575500,
+    "note": "Snapshot from the OpenCode session record at 2026-11-03T03:52:10Z, after the live GitHub Pages self-test (23/23) and before the final state-file commit and closing response. total = input + output + reasoning. Cache reads/writes are context-usage figures and are reported separately; those final actions add a small amount more.",
     "cost": 0.0
   },
   "cost": {

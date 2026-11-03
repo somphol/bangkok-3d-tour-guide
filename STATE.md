@@ -6,8 +6,10 @@
 | Session started | 2026-11-03 02:46:41 UTC |
 | Build started | 2026-11-03 02:48:24 UTC |
 | Source frozen | 2026-11-03 03:49:43 UTC |
+| Published / verified | 2026-11-03 03:52:10 UTC |
 | Build duration | **1h 1m 19s** (3,679 seconds) |
 | Session duration to freeze | **1h 3m 2s** (3,782 seconds) |
+| Session duration to publish | **1h 5m 29s** (3,929 seconds) |
 | Harness | OpenCode 2.2.5 |
 | Model | DeepSeek V4.1 Flash (`opencode-go/deepseek-v4.1-flash`) |
 | Session | `ses_e60b2c542ffezeHzunC0PwPEEY` |
@@ -19,18 +21,17 @@
 
 | Metric | Tokens |
 | --- | ---: |
-| Input | 554,647 |
-| Output | 143,504 |
-| Reasoning | 143,617 |
-| **Total (input + output + reasoning)** | **841,768** |
-| Cache read | 68,109,952 |
+| Input | 564,636 |
+| Output | 146,794 |
+| Reasoning | 148,088 |
+| **Total (input + output + reasoning)** | **859,518** |
+| Cache read | 70,714,752 |
 | Cache write | 1,230 |
-| Total including cache | 68,952,950 |
+| Total including cache | 71,575,500 |
 
-> Snapshot from the OpenCode session record at 2026-11-03T03:49:43Z, immediately before the source
-> freeze. Total cost reported by the session: **$0.00**. The final state-file commit, GitHub push,
-> Pages build and closing response happen after this snapshot, so live session totals are marginally
-> higher. Cache reads/writes are context-usage figures and are reported separately from the
+> Snapshot from the OpenCode session record at 2026-11-03T03:52:10Z, after the live GitHub Pages
+> self-test (23/23) and before the final state commit. Total cost reported by the session: **$0.00**. The final state-file commit, its push and the closing response happen after this snapshot, so
+> live session totals are marginally higher. Cache reads/writes are context-usage figures and are reported separately from the
 > input/output/reasoning total.
 
 ## What was built
@@ -142,6 +143,5 @@ r128 OrbitControls and PointerLockControls examples. Fonts: Chonburi, Kanit, Cor
 
 ## Post-freeze work
 
-The final commit, GitHub push, Pages build, live verification and the closing response happen after the
-snapshot. This file is the record of the build itself; the deployed site is the source of truth for the
-finished artefact.
+The live Pages build was verified at the published timestamp above, including a 23/23 self-test. This
+state file is the build record; the deployed site is the source of truth for the finished artefact.
